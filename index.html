@@ -688,7 +688,7 @@ const SECTIONS = [
         f: [['Overseen by', 'Wharton Council, with the Wharton Undergraduate Division'], ['How many', '50+ recognized Wharton clubs, mostly pre-professional'], ['Applications', 'No resumes, one interview of 30 minutes or less, no technical questions or group cases; decisions through Penn Clubs within two weeks']],
         b: `<p>Wharton clubs are overseen by the <b>Wharton Council</b>, which works with the Undergraduate Division on club budgets, recognition, registration, and general support. Most are pre-professional: investing, consulting, industry clubs, and similar.</p>
             <h3>Wharton clubs vs. SAC clubs</h3>
-            <p>Business-focused groups go through Wharton rather than the Student Activities Council (SAC). Academic and pre-professional groups affiliated with Wharton or Engineering must be recognized by the Wharton Council or the Engineering Student Activities Council. For a group to be a Wharton club, a simple majority of its executive board must be Wharton undergraduates. A club not on the Council’s list is outside its jurisdiction.</p>
+            <p>Business-focused groups go through Wharton rather than the Student Allocations Commission (SAC). Academic and pre-professional groups affiliated with Wharton or Engineering must be recognized by the Wharton Council or the Engineering Student Activities Council. For a group to be a Wharton club, a simple majority of its executive board must be Wharton undergraduates. A club not on the Council’s list is outside its jurisdiction.</p>
             <h3>Applying</h3>
             <p>Since fall 2025, Wharton Council’s recruitment policy caps the process: clubs can’t ask for resumes, can hold only one interview per applicant (30 minutes max), and can’t use technical questions or group cases. Decisions come through Penn Clubs within two weeks. There’s a centralized application window each semester. In spring 2026 it ran in late January, so watch your email in January for the spring round.</p>
             <p>Rejections still happen and say little about you. Apply broadly, and keep at least one club with no application in the mix.</p>
@@ -1050,10 +1050,10 @@ const GLOSSARY = [
   ['CURF', 'Center for Undergraduate Research & Fellowships.'],
   ['SRFS', 'Student Registration & Financial Services: aid, billing, registration.'],
   ['FGLI', 'First-generation, low-income.'],
-  ['SAC', 'Student Activities Council, which funds most non-Wharton clubs.'],
+  ['SAC', 'Student Allocations Commission, which funds most non-Wharton clubs.'],
   ['UA', 'Undergraduate Assembly, Penn’s student government.'],
   ['CRC', 'Cultural Resource Centers: GIC, Makuu, La Casa Latina, PAACH, the LGBT Center, and the Penn Women’s Center.'],
-  ['Penn Labs', 'The student group behind Penn Mobile, Course Plan, and Course Alert.'],
+  ['Penn Labs', `The student group behind Penn Mobile, <a href="${U.coursePlan}" target="_blank" rel="noopener">Penn Course Plan</a>, <a href="${U.courseReview}" target="_blank" rel="noopener">Penn Course Review</a>, and <a href="${U.courseAlert}" target="_blank" rel="noopener">Penn Course Alert</a>.`],
   ['Dining Dollars', 'Money on your dining plan for cafés and mobile ordering.'],
   ['Spring Fling', 'Penn’s big end-of-year spring festival.'],
   ['Quakers', 'Penn’s athletics teams and unofficial nickname for students.']
@@ -1232,7 +1232,7 @@ SECTIONS.forEach(s => s.cells.forEach(c => (c.rows || []).forEach(r => INDEX.pus
 DATES.forEach(x => INDEX.push({ kind: 'row', r: { t: x.t, u: x.u, n: x.n, m: fmt(day(x.end || x.date)) }, where: 'Coming Up', text: plain(x.t + ' ' + (x.n || '')).toLowerCase() }));
 HELP.forEach(h => INDEX.push({ kind: 'row', r: { t: h.t, u: h.u, n: h.n, m: `<a class="tel" href="tel:${h.tel.replace(/\D/g, '')}">${h.tel}</a>` }, where: 'Need Help Now', text: plain(h.t + ' ' + h.n).toLowerCase() }));
 ASK.forEach(([q, a]) => INDEX.push({ kind: 'html', html: `<div class="ask"><span class="res-meta">Who Do I Ask?</span><div class="ask-q">${q}</div><div class="ask-a">${a}</div></div>`, text: plain(q + ' ' + a).toLowerCase() }));
-GLOSSARY.forEach(([t, d]) => INDEX.push({ kind: 'row', r: { t, n: d }, where: 'Penn-Speak Decoder', text: (t + ' ' + d).toLowerCase() }));
+GLOSSARY.forEach(([t, d]) => INDEX.push({ kind: 'row', r: { t, n: d }, where: 'Penn-Speak Decoder', text: plain(t + ' ' + d).toLowerCase() }));
 
 const q = $('q'), qClear = $('q-clear');
 let qTimer;
