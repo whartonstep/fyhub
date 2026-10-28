@@ -1,1034 +1,1285 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Penn &amp; Wharton First-Year Resource Hub</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&amp;display=swap" rel="stylesheet">
+<meta name="description" content="Links, deadlines, and how-tos for Penn and Wharton first-years: advising, clubs, study abroad, research, careers, wellness, and more." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M4 3h24v13c0 7-5 11-12 13C9 27 4 23 4 16z' fill='%23011F5B'/%3E%3Cpath d='M4 3h12v26C9 27 4 23 4 16z' fill='%23990000'/%3E%3C/svg%3E" />
 <style>
-:root{
-  --red:#990000;
-  --red-dark:#7a0000;
-  --navy:#011F5B;
-  --navy-light:#0b3382;
-  --ink:#2d3b45;
-  --ink-soft:#586874;
-  --line:#c7cdd1;
-  --line-soft:#e6eaec;
-  --bg:#ffffff;
-  --bg-shell:#f5f5f5;
-  --nav-bg:#2d3b45;
-  --nav-ink:#ffffff;
-  --nav-ink-soft:#c7cdd1;
-  --link:#0770a3;
-  --ok:#0b874b;
-  --tile-frame:#1d2b3a;
-  --shadow:0 1px 2px rgba(0,0,0,.12);
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ink:#e4e9ec; --ink-soft:#a9b6bf; --line:#3a4750; --line-soft:#2b353d;
-    --bg:#161c21; --bg-shell:#10151a; --nav-bg:#0c1116; --nav-ink-soft:#8c9aa4;
-    --link:#6fc0e8; --red:#c23b3b; --navy:#4a6fc4; --tile-frame:#0c1116;
-    --ok:#3fbd7e; --shadow:0 1px 2px rgba(0,0,0,.5);
+  :root {
+    --navy: #011F5B; --blue: #0C447C; --link: #185FA5; --link-dark: #0C447C;
+    --tag: #D6E4F5; --tag-ink: #042C53; --red: #990000; --red-2: #B31B1B;
+    --ink: #111; --soft: #555; --muted: #6b6b6b; --line: #e6e8eb; --shell: #f5f7fa;
   }
-}
-:root[data-theme="dark"]{
-  --ink:#e4e9ec; --ink-soft:#a9b6bf; --line:#3a4750; --line-soft:#2b353d;
-  --bg:#161c21; --bg-shell:#10151a; --nav-bg:#0c1116; --nav-ink-soft:#8c9aa4;
-  --link:#6fc0e8; --red:#c23b3b; --navy:#4a6fc4; --tile-frame:#0c1116;
-  --ok:#3fbd7e; --shadow:0 1px 2px rgba(0,0,0,.5);
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  background:var(--bg);
-  color:var(--ink);
-  font-family:Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size:16px;line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-}
-a{color:var(--link)}
-.layout{display:flex;min-height:100vh;align-items:stretch}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #fff; color: var(--ink); line-height: 1.45; }
+  a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { color: var(--link-dark); }
+  :focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .skip { position: absolute; left: 12px; top: -40px; background: var(--navy); color: #fff; padding: 8px 12px; z-index: 100; border-radius: 6px; }
+  .skip:focus { top: 12px; color: #fff; }
 
-/* ---------- course nav ---------- */
-.nav{
-  width:200px;flex:0 0 200px;background:var(--nav-bg);color:var(--nav-ink);
-  padding:18px 0 40px;display:flex;flex-direction:column;gap:2px;
-}
-.nav .crest{
-  display:flex;gap:10px;align-items:center;padding:0 16px 16px;
-  border-bottom:1px solid rgba(255,255,255,.14);margin-bottom:10px;
-}
-.crest .mark{
-  width:34px;height:34px;flex:0 0 34px;border-radius:3px;
-  background:linear-gradient(135deg,var(--red) 0 50%, var(--navy) 50% 100%);
-  color:#fff;font-weight:900;font-size:15px;display:flex;align-items:center;justify-content:center;
-}
-.crest .who{font-size:12px;line-height:1.25;color:var(--nav-ink-soft)}
-.crest .who b{display:block;color:#fff;font-size:13px}
-.nav button.navlink{
-  all:unset;display:block;cursor:pointer;padding:9px 16px;font-size:14px;
-  color:var(--nav-ink-soft);border-left:4px solid transparent;
-}
-.nav button.navlink:hover{color:#fff;background:rgba(255,255,255,.06)}
-.nav button.navlink[aria-current="true"]{color:#fff;font-weight:700;border-left-color:var(--red);background:rgba(255,255,255,.08)}
-.nav .search{padding:12px 12px 6px}
-.nav .search input{
-  width:100%;padding:7px 9px;border-radius:3px;border:1px solid rgba(255,255,255,.2);
-  background:rgba(255,255,255,.08);color:#fff;font:inherit;font-size:13px;
-}
-.nav .search input::placeholder{color:var(--nav-ink-soft)}
-.nav .foot{margin-top:auto;padding:14px 16px 0}
-.nav .foot button{
-  all:unset;cursor:pointer;font-size:12px;color:var(--nav-ink-soft);
-}
-.nav .foot button:hover{color:#fff;text-decoration:underline}
+  /* ---------- header ---------- */
+  .top { text-align: center; padding: 30px 24px 22px; }
+  .crest { width: 54px; height: 62px; display: block; margin: 0 auto 10px; }
+  .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); margin-bottom: 4px; }
+  h1 { font-size: 30px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+  .subtitle { font-size: 17px; color: var(--soft); max-width: 660px; margin: 0 auto; }
+  .stamp { font-size: 13px; color: var(--muted); margin-top: 8px; }
 
-/* ---------- main ---------- */
-.main{flex:1;min-width:0;background:var(--bg);padding:0 0 80px}
-.topbar{
-  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
-  padding:12px 28px;border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-soft);
-}
-.topbar .menu-btn{display:none}
-.crumbs{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.crumbs button{all:unset;cursor:pointer;color:var(--link)}
-.crumbs button:hover{text-decoration:underline}
-.crumbs span.sep{color:var(--line)}
-.wrap{max-width:1000px;padding:26px 28px 0}
-h1.page-title{font-size:27px;font-weight:700;margin:6px 0 18px;color:var(--ink)}
-.rule{height:1px;background:var(--line-soft);margin:14px 0 22px}
+  /* ---------- sticky jump bar ---------- */
+  .jump { position: sticky; top: 0; z-index: 30; background: var(--navy); border-top: 3px solid var(--red); box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+  .jump-in { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; gap: 12px; padding: 0 16px; }
+  .jump nav { flex: 1; min-width: 0; display: flex; overflow-x: auto; scrollbar-width: none; }
+  .jump nav::-webkit-scrollbar { display: none; }
+  .jump nav a { color: #cfdcf0; text-decoration: none; font-size: 14px; font-weight: 600; white-space: nowrap; padding: 13px 9px 11px; border-bottom: 3px solid transparent; }
+  .jump nav a:hover { color: #fff; }
+  .jump nav a.on { color: #fff; border-bottom-color: #fff; }
+  .search { position: relative; flex: 0 0 220px; }
+  .search input { width: 100%; font: inherit; font-size: 14px; padding: 7px 30px 7px 11px; border-radius: 999px; border: 1px solid rgba(255,255,255,.35); background: rgba(255,255,255,.12); color: #fff; }
+  .search input::placeholder { color: #b8c6dc; }
+  .search input::-webkit-search-cancel-button { display: none; }
+  .search input:focus { background: #fff; color: var(--ink); outline: none; border-color: #fff; }
+  .search input:focus::placeholder { color: #888; }
+  .search-clear { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 18px; line-height: 1; color: #888; cursor: pointer; padding: 2px 6px; }
 
-/* ---------- home tile grid ---------- */
-.tilegrid{width:100%;border-collapse:collapse;table-layout:fixed}
-.tilegrid td{border:1px solid var(--line-soft);padding:16px 10px 18px;text-align:center;vertical-align:top}
-.tile{all:unset;cursor:pointer;display:inline-block;width:100%;max-width:300px}
-.art{
-  display:block;position:relative;width:100%;aspect-ratio:1/1;border:5px solid var(--tile-frame);
-  overflow:hidden;background:#8894a0;box-shadow:var(--shadow);
-}
-.art::after,.art::before{content:"";position:absolute;inset:0}
-.art::after{background:var(--navy);clip-path:polygon(66% 0,100% 0,100% 100%,30% 100%);opacity:.95;z-index:2}
-.art::before{background:var(--red);clip-path:polygon(0 56%,100% 18%,100% 100%,0 100%);opacity:.95;z-index:1}
-.art .photo{position:absolute;inset:0;z-index:0}
-.art .cap{
-  position:absolute;left:8%;bottom:7%;z-index:3;color:#fff;font-weight:700;
-  font-size:clamp(15px,2.1vw,22px);line-height:1.12;text-align:left;max-width:78%;
-  text-shadow:0 1px 2px rgba(0,0,0,.25);
-}
-.tile:focus-visible .art,.tile:hover .art{outline:3px solid var(--link);outline-offset:2px}
-.tile .label{display:block;margin-top:10px;color:var(--link);text-decoration:underline;font-size:15px}
-.tile .prog{display:block;margin-top:3px;font-size:12px;color:var(--ink-soft)}
-/* per-module photo stand-ins */
-.p1{background:
-  radial-gradient(120% 80% at 70% 10%,#dfe7ef 0,#b9c6d4 45%,#7d8ea0 100%),
-  repeating-linear-gradient(90deg,rgba(255,255,255,.35) 0 6px,transparent 6px 22px)}
-.p2{background:
-  radial-gradient(90% 70% at 25% 20%,#f0e2cf 0,#cdb595 55%,#8d7654 100%),
-  repeating-linear-gradient(115deg,rgba(0,0,0,.06) 0 10px,transparent 10px 26px)}
-.p3{background:
-  radial-gradient(110% 90% at 80% 15%,#dff0e8 0,#9dc7b4 50%,#4f7f6d 100%),
-  repeating-linear-gradient(35deg,rgba(255,255,255,.22) 0 8px,transparent 8px 24px)}
-.p4{background:
-  radial-gradient(100% 80% at 30% 25%,#e6e1f2 0,#b3a8d1 55%,#6d5f97 100%),
-  repeating-linear-gradient(0deg,rgba(255,255,255,.2) 0 5px,transparent 5px 18px)}
-.p5{background:
-  radial-gradient(110% 80% at 65% 20%,#fbe9d6 0,#e0b287 50%,#9c6a3c 100%),
-  repeating-linear-gradient(75deg,rgba(0,0,0,.07) 0 9px,transparent 9px 27px)}
-.p6{background:
-  radial-gradient(100% 80% at 40% 20%,#d9e9f5 0,#8fb6d4 55%,#3f6489 100%),
-  repeating-linear-gradient(145deg,rgba(255,255,255,.25) 0 7px,transparent 7px 21px)}
-.p7{background:
-  radial-gradient(100% 85% at 55% 15%,#e8eef0 0,#a6bcc2 50%,#5c757c 100%),
-  repeating-linear-gradient(60deg,rgba(255,255,255,.28) 0 4px,transparent 4px 16px)}
+  /* ---------- sections ---------- */
+  main { padding: 0 32px 40px; }
+  .sect { max-width: 1280px; margin: 38px auto 0; scroll-margin-top: 64px; }
+  .sect-head { display: flex; align-items: baseline; gap: 6px 14px; flex-wrap: wrap; margin-bottom: 12px; }
+  .sect-head h2 { font-size: 23px; font-weight: 800; color: var(--navy); }
+  .sect-head p { font-size: 15px; color: var(--soft); flex: 1 1 380px; }
 
-/* ---------- module view ---------- */
-.modhead{
-  border:1px solid var(--line);border-bottom:none;background:var(--bg-shell);
-  padding:12px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;
-}
-.modhead h2{margin:0;font-size:17px;font-weight:700}
-.modhead .pill{
-  font-size:12px;color:var(--ink-soft);border:1px solid var(--line);border-radius:20px;
-  padding:2px 10px;background:var(--bg);
-}
-.itemlist{border:1px solid var(--line);margin:0 0 28px;padding:0;list-style:none}
-.itemlist li{border-top:1px solid var(--line-soft)}
-.itemlist li:first-child{border-top:none}
-.itemrow{display:flex;align-items:center;gap:12px;padding:11px 16px}
-.itemrow:hover{background:var(--bg-shell)}
-.itemrow .ico{flex:0 0 18px;color:var(--ink-soft)}
-.itemrow a{flex:1;color:var(--link);text-decoration:none;cursor:pointer}
-.itemrow a:hover{text-decoration:underline}
-.check{
-  all:unset;cursor:pointer;flex:0 0 auto;width:26px;height:26px;border-radius:50%;
-  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
-  color:transparent;font-size:14px;line-height:1;
-}
-.check:hover{border-color:var(--ok);color:var(--line)}
-.check[aria-pressed="true"]{border-color:var(--ok);color:var(--ok)}
-.check:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+  /* ---------- the board (STEP-style bordered grid) ---------- */
+  .board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-flow: row dense; padding: 1px 0 0 1px; }
+  .board.b4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .board.b2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cell { border: 1px solid #000; margin: -1px 0 0 -1px; display: flex; flex-direction: column; min-width: 0; background: #fff; }
+  .s2 { grid-column: span 2; } .s3 { grid-column: span 3; } .r2 { grid-row: span 2; }
+  .cell-head { background: var(--blue); color: #fff; font-weight: 700; font-size: 15px; text-align: center; padding: 10px 8px; border-bottom: 1px solid #000; }
+  .cell-head.red { background: var(--red); }
+  .cell-tag { background: var(--tag); color: var(--tag-ink); font-style: italic; font-size: 14px; text-align: center; padding: 6px 10px; border-bottom: 1px solid #000; }
+  .cell-tag.mid { border-top: 1px solid #000; }
+  .cell-body { padding: 12px 16px 14px; font-size: 14px; flex: 1; }
+  .cell-body > p { margin-bottom: 8px; }
 
-/* ---------- content pages ---------- */
-.page{max-width:76ch}
-.page h2{font-size:21px;margin:30px 0 8px;font-weight:700;border-bottom:1px solid var(--line-soft);padding-bottom:5px}
-.page h3{font-size:17px;margin:22px 0 4px;font-weight:700}
-.page p{margin:10px 0}
-.page ul{margin:10px 0;padding-left:22px}
-.page li{margin:5px 0}
-.page a{color:var(--link)}
-.facts{
-  border:1px solid var(--line);border-left:4px solid var(--navy);background:var(--bg-shell);
-  padding:10px 14px;margin:14px 0;font-size:14.5px;
-}
-.facts div{display:flex;gap:8px;padding:2px 0}
-.facts b{flex:0 0 150px;color:var(--ink)}
-.note{
-  border:1px solid var(--line);border-left:4px solid var(--red);background:var(--bg-shell);
-  padding:12px 14px;margin:16px 0;font-size:15px;
-}
-.note b{display:block;margin-bottom:3px}
-table.data{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
-table.data th,table.data td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
-table.data th{background:var(--bg-shell);font-weight:700}
-.linkrow{margin:12px 0;display:flex;flex-wrap:wrap;gap:8px}
-.linkrow a,.linkrow .pending{
-  display:inline-block;border:1px solid var(--line);border-radius:3px;padding:5px 11px;
-  font-size:14px;text-decoration:none;background:var(--bg);
-}
-.linkrow a:hover{border-color:var(--link);text-decoration:underline}
-.pending{color:var(--ink-soft);border-style:dashed !important;cursor:help}
-.pagefoot{
-  display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;
-  border-top:1px solid var(--line-soft);margin-top:34px;padding-top:14px;
-}
-.pagefoot button{
-  all:unset;cursor:pointer;color:var(--link);font-size:14px;
-}
-.pagefoot button:hover{text-decoration:underline}
-.pagefoot .done{
-  border:1px solid var(--line);border-radius:3px;padding:6px 12px;color:var(--ink);
-}
-.pagefoot .done[aria-pressed="true"]{border-color:var(--ok);color:var(--ok);font-weight:700}
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .row:last-child { border-bottom: none; }
+  .rmain { min-width: 0; }
+  .rt { font-weight: 600; }
+  .rn { display: block; font-size: 12.5px; color: var(--soft); margin-top: 1px; }
+  .meta { font-size: 12px; color: var(--muted); text-align: right; flex-shrink: 0; max-width: 42%; }
+  .row.more { cursor: pointer; margin: 0 -8px; padding-left: 8px; padding-right: 8px; border-radius: 6px; }
+  .row.more:hover { background: #eef4fb; }
+  .row.more .rt { color: var(--link); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; }
+  .row.more .meta::after { content: ' ›'; font-size: 15px; color: var(--link); font-weight: 700; }
+  .note { font-size: 13px; color: var(--soft); margin-bottom: 8px; }
+  .callout { font-size: 13px; background: #fff7e6; border-left: 3px solid #d68a00; padding: 7px 10px; margin: 6px 0 8px; color: #4a3500; }
+  .callout b { color: #3a2a00; }
 
-/* ---------- index + search ---------- */
-.indexlist{list-style:none;padding:0;margin:0;border:1px solid var(--line)}
-.indexlist li{border-top:1px solid var(--line-soft);padding:10px 16px}
-.indexlist li:first-child{border-top:none}
-.indexlist small{display:block;color:var(--ink-soft);font-size:12.5px}
-.indexlist button{all:unset;cursor:pointer;color:var(--link)}
-.indexlist button:hover{text-decoration:underline}
-mark{background:#ffe9a8;color:#503b00;padding:0 2px}
-.empty{border:1px dashed var(--line);padding:20px;color:var(--ink-soft)}
+  .pill { display: inline-block; font-size: 11px; font-weight: 700; font-style: normal; padding: 2px 8px; border-radius: 999px; margin: 0 4px 0 0; vertical-align: 1px; white-space: nowrap; }
+  .pill-wh { background: var(--navy); color: #fff; }
+  .pill-penn { background: #C4DCF7; color: #0B3A6E; }
+  .pill-fy { background: #C6EBC4; color: #14501A; }
+  .pill-later { background: #fff; color: #555; box-shadow: inset 0 0 0 1px #aaa; }
+  .pill-app { background: #DCCCF2; color: #3A1D6E; }
+  .pill-free { background: #A6EDE3; color: #04342C; }
+  .pill-apply { background: #F8C4C4; color: #6B0F0F; }
+  .pill-academic { background: #C4DCF7; color: #0B3A6E; }
+  .pill-break { background: #FFF0A0; color: #4A3D00; }
+  .pill-career { background: #FDD5AE; color: #6A3300; }
+  .pill-life { background: #DCCCF2; color: #3A1D6E; }
 
-@media (max-width:840px){
-  .layout{display:block}
-  .nav{width:100%;flex:none;padding:12px 0 16px}
-  .nav.collapsed .navlink,.nav.collapsed .search,.nav.collapsed .foot{display:none}
-  .topbar .menu-btn{display:inline-block;all:unset;cursor:pointer;color:var(--link);font-size:13px}
-  .wrap{padding:18px 16px 0}
-  .topbar{padding:10px 16px}
-  .tilegrid,.tilegrid tbody,.tilegrid tr,.tilegrid td{display:block;width:100%}
-  .tilegrid td:empty{display:none}
-  .facts b{flex-basis:120px}
-  table.data{display:block;overflow-x:auto}
-}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+  /* coming up */
+  .due-item { padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .due-item:last-child { border-bottom: none; }
+  .due-top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .due-title { font-weight: 600; }
+  .due-date { font-weight: 700; font-size: 13px; color: var(--link); white-space: nowrap; text-align: right; }
+  .due-rel { display: block; font-size: 11px; font-weight: 600; color: var(--muted); }
+  .due-rel.soon { color: var(--red); }
+  .due-note { font-size: 12.5px; color: var(--soft); margin-top: 2px; }
+  .linkbtn { background: none; border: none; font: inherit; color: var(--link); text-decoration: underline; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+
+  /* help now */
+  .help-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--line); }
+  .help-row:last-child { border-bottom: none; }
+  .help-row b { display: block; }
+  .help-row .rn { margin: 0; }
+  .tel { font-weight: 700; color: var(--red); white-space: nowrap; text-decoration: none; font-size: 14px; }
+  .tel:hover { color: var(--red-2); text-decoration: underline; }
+  .emergency { background: var(--red); color: #fff; border-radius: 8px; text-align: center; padding: 8px 10px; font-size: 13px; margin-bottom: 6px; }
+  .emergency a { color: #fff; font-weight: 800; font-size: 16px; }
+
+  /* checklist */
+  .chk { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--line); align-items: start; }
+  .chk:last-child { border-bottom: none; }
+  .chk input { width: 16px; height: 16px; margin-top: 2px; accent-color: var(--blue); cursor: pointer; }
+  .chk label { cursor: pointer; }
+  .chk.done label { color: var(--muted); text-decoration: line-through; }
+  .chk .rn a { font-weight: 600; }
+  .progress { height: 8px; background: #fff; border-radius: 999px; margin: 5px auto 1px; max-width: 220px; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(4,44,83,.25); }
+  .progress i { display: block; height: 100%; background: var(--blue); transition: width .25s; }
+
+  /* who to ask */
+  .ask { padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .ask:last-child { border-bottom: none; }
+  .ask-q { font-weight: 600; }
+  .ask-a { font-size: 13px; color: var(--soft); margin-top: 1px; }
+
+  /* timeline */
+  .season ul { padding-left: 18px; font-size: 13.5px; }
+  .season li { margin-bottom: 7px; }
+  .season li:last-child { margin-bottom: 0; }
+
+  /* finder + decoder tables */
+  table.data { width: 100%; border-collapse: collapse; font-size: 14px; }
+  table.data th, table.data td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.data th { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); border-bottom: 2px solid #000; }
+  table.data tr:last-child td { border-bottom: none; }
+  table.data button { background: none; border: none; font: inherit; color: var(--link); font-weight: 600; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; cursor: pointer; text-align: left; }
+  .gloss { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; }
+  .gloss div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; }
+  .gloss dt { font-weight: 700; color: var(--navy); }
+
+  /* steps (numbered how-tos) */
+  .step { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 6px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .step:last-child { border-bottom: none; }
+  .step-n { font-weight: 700; color: var(--link); }
+  .step-title { font-weight: 600; }
+
+  /* search results */
+  #results[hidden], .sect[hidden] { display: none; }
+  .res-meta { font-size: 11.5px; color: var(--muted); display: block; }
+  mark { background: #ffe9a8; color: inherit; padding: 0 1px; border-radius: 2px; }
+
+  /* ---------- detail pop-up ---------- */
+  .dlg { margin: auto; width: 600px; max-width: calc(100vw - 28px); max-height: calc(100vh - 56px); border: 1px solid #000; border-radius: 10px; padding: 0; box-shadow: 0 10px 32px rgba(0,0,0,.25); }
+  .dlg::backdrop { background: rgba(1, 31, 91, .4); }
+  .dlg-bar { background: var(--blue); color: #fff; padding: 12px 48px 12px 20px; position: sticky; top: 0; z-index: 1; }
+  .dlg-bar h2 { font-size: 18px; line-height: 1.25; }
+  .dlg-bar .crumb { font-size: 12px; color: #cfdcf0; display: block; margin-bottom: 2px; }
+  .dlg-close { position: absolute; top: 8px; right: 10px; background: none; border: none; font-size: 26px; line-height: 1; color: #fff; cursor: pointer; padding: 2px 6px; }
+  .dlg-body { padding: 16px 20px 18px; font-size: 14.5px; }
+  .dlg-body p { margin-bottom: 9px; }
+  .dlg-body ul { padding-left: 20px; margin-bottom: 9px; }
+  .dlg-body li { margin-bottom: 4px; }
+  .dlg-body h3 { font-size: 14.5px; margin: 14px 0 5px; padding-top: 10px; border-top: 1px solid var(--line); color: var(--navy); }
+  .facts { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 6px 12px; margin: 0 0 12px; padding: 10px 12px; background: var(--shell); border-left: 3px solid var(--blue); border-radius: 0 6px 6px 0; font-size: 14px; }
+  .facts dt { font-weight: 700; color: var(--blue); }
+  .dlg-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .dlg-link { background: var(--blue); color: #fff; text-decoration: none; font-weight: 700; font-size: 13px; padding: 6px 13px; border-radius: 999px; }
+  .dlg-link:hover { background: var(--link); color: #fff; }
+  .dlg-link.alt { background: #fff; color: var(--blue); box-shadow: inset 0 0 0 1.5px var(--blue); }
+  .dlg-foot { font-size: 12px; color: var(--muted); margin-top: 14px; }
+
+  .footer { max-width: 1280px; margin: 44px auto 0; text-align: center; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 18px; }
+  .footer a { color: var(--muted); }
+  .totop { position: fixed; right: 18px; bottom: 18px; z-index: 25; background: var(--navy); color: #fff; border: none; border-radius: 999px; padding: 9px 14px; font: 700 13px inherit; font-family: inherit; box-shadow: 0 4px 14px rgba(0,0,0,.2); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .2s; }
+  .totop.show { opacity: 1; pointer-events: auto; }
+
+  @media (max-width: 1099px) {
+    .board, .board.b4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .s3 { grid-column: span 2; }
+    .search { flex-basis: 190px; }
+  }
+  @media (max-width: 760px) {
+    main { padding: 0 14px 30px; }
+    .top { padding: 22px 16px 16px; }
+    h1 { font-size: 23px; }
+    .subtitle { font-size: 15px; }
+    .jump-in { flex-wrap: wrap; padding: 8px 10px 0; gap: 4px; }
+    .search { flex: 1 1 100%; order: -1; }
+    .jump nav a { padding: 9px 9px 8px; font-size: 13px; }
+    .board, .board.b4, .board.b2 { grid-template-columns: minmax(0, 1fr); }
+    .s2, .s3 { grid-column: auto; } .r2 { grid-row: auto; }
+    .sect { scroll-margin-top: 104px; }
+    .gloss { grid-template-columns: minmax(0, 1fr); }
+    .facts { grid-template-columns: 92px minmax(0, 1fr); }
+    .meta { max-width: 38%; }
+  }
+  @media print {
+    .jump, .totop, .search { display: none !important; }
+    .cell { break-inside: avoid; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 </style>
 </head>
 <body>
-<div class="layout">
-  <nav class="nav collapsed" id="nav">
-    <div class="crest">
-      <div class="mark">P</div>
-      <div class="who"><b>First-Year Hub</b>Penn &amp; Wharton resources</div>
-    </div>
-    <button class="navlink" data-go="#/home">Home</button>
-    <button class="navlink" data-go="#/modules">Modules</button>
-    <button class="navlink" data-go="#/pages">All pages</button>
-    <div class="search">
-      <input id="q" type="search" placeholder="Search this site" aria-label="Search this site">
-    </div>
-    <div class="foot">
-      <button id="download">Download this site</button><br>
-      <button id="theme">Switch theme</button>
-    </div>
-  </nav>
+<a class="skip" href="#start">Skip to content</a>
 
-  <main class="main">
-    <div class="topbar">
-      <button class="menu-btn" id="menu">Menu</button>
-      <div class="crumbs" id="crumbs"></div>
+<header class="top">
+  <svg class="crest" viewBox="0 0 54 62" aria-hidden="true">
+    <path d="M3 3h48v26c0 15-11 25-24 30C14 54 3 44 3 29z" fill="#011F5B"/>
+    <path d="M3 3h24v56C14 54 3 44 3 29z" fill="#990000"/>
+    <text x="27" y="36" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="19" fill="#fff">1Y</text>
+  </svg>
+  <p class="eyebrow">University of Pennsylvania · The Wharton School</p>
+  <h1>First-Year Resource Hub</h1>
+  <p class="subtitle">Where to go, who to ask, and what’s due — for Penn and Wharton first-years.</p>
+  <p class="stamp" id="stamp"></p>
+</header>
+
+<div class="jump" role="navigation" aria-label="Sections">
+  <div class="jump-in">
+    <nav id="jumpnav"></nav>
+    <div class="search" role="search">
+      <label class="sr-only" for="q">Search the hub</label>
+      <input id="q" type="search" placeholder="Search (try “GRIP” or “tutoring”)" autocomplete="off" />
+      <button class="search-clear" id="q-clear" type="button" aria-label="Clear search" hidden>×</button>
     </div>
-    <div class="wrap" id="view"></div>
-  </main>
+  </div>
 </div>
 
+<main id="main">
+  <section class="sect" id="results" hidden aria-live="polite">
+    <div class="sect-head"><h2 id="results-title">Search results</h2><p>Press Esc or clear the box to go back to the full hub.</p></div>
+    <div class="board b2"><section class="cell s2"><div class="cell-body" id="results-body"></div></section></div>
+  </section>
+  <div id="sections"></div>
+  <footer class="footer" id="footer"></footer>
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-bar"><span class="crumb" id="dlg-crumb"></span><h2 id="dlg-title"></h2>
+    <button class="dlg-close" type="button" aria-label="Close">×</button></div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<button class="totop" id="totop" type="button">↑ Top</button>
+
 <script>
-/* =========================================================================
-   COURSE CONTENT
-   To add a module: copy one of the objects below into MODULES.
-     id     unique slug used in the URL
-     title  shown on the tile and module header
-     cap    the words printed on the tile artwork
-     art    p1..p6  (tile background style, defined in the CSS above)
-     items  the pages inside the module: {id, title, html}
-   Everything else (tiles, progress, search, next/previous) updates itself.
-   ========================================================================= */
+/* =====================================================================
+   EDITING GUIDE
+   Everything on the page is generated from the data below; you should
+   never need to touch the HTML or the rendering code at the bottom.
 
-const pending = (t) => '<span class="pending" title="Add the URL for this link in the page HTML">' + t + '</span>';
+   UPDATED      the "last checked" date shown under the title.
+   DATES        "Coming Up" list. Items hide the day after their date
+                (or after `end`, for ranges). tag = apply | academic |
+                break | career | life.
+   CHECKLIST    first-semester to-dos (ticks are saved in the browser).
+   SECTIONS     every board on the page. A section has cells; a cell has
+                rows. A row is { t: title, u: url, m: right-hand meta,
+                n: note under the title, p: [pills], d: {details pop-up} }.
+                A row with `d` opens a pop-up instead of a link.
+                Pills: wh (Wharton only), penn (all Penn), fy (open to
+                first-years), later (plan for later), app, free.
+   ===================================================================== */
 
-const MODULES = [
-{
-  id:"welcome", title:"Welcome Module", cap:"Welcome", art:"p1", solo:true,
-  items:[
-    { id:"start-here", title:"Start here", html:`
-      <p>This site collects the Penn and Wharton resources first-years ask about most: how to get involved on campus, how to go abroad or get paid to do research, how career recruiting actually runs, and where to go when a class gets hard.</p>
-      <h2>How it is organized</h2>
-      <ul>
-        <li><b>Getting Involved on Campus</b> — Wharton clubs, Greek life, and the cultural resource centers.</li>
-        <li><b>Global &amp; Experiential Learning</b> — study abroad, global seminars, internships and funded research.</li>
-        <li><b>Career Planning</b> — Career Services, Handshake, on-campus recruiting, and funding.</li>
-        <li><b>Academic Foundations &amp; Advising</b> — tutoring, advising, registration tools, and writing support.</li>
-      </ul>
-      <p>Each module holds a few pages. Use the circle next to a page to mark it done — the tiles on the home page track how far through you are.</p>
-      <div class="note">
-        <b>Check the dates before you rely on them</b>
-        Penn policies and funding change year to year (club funding was restructured again this year, and Career Services cut most summer funding). Treat deadlines here as a starting point and confirm them on the office's own page.
-      </div>` },
-    { id:"how-to-use", title:"How to use this site", html:`
-      <h2>Reading order</h2>
-      <p>Nothing is locked. If you are in your first semester, the highest-value pages are the global programs with early deadlines and the career timeline — both run months before students expect.</p>
-      <h2>The three things that catch first-years out</h2>
-      <ul>
-        <li>GRIP applications for Summer 2027 open <b>November 4, 2026</b> and close <b>January 6, 2027</b>, or earlier if a placement fills.</li>
-        <li>Finance and consulting recruiting runs far ahead of every other industry, and moves earlier each year.</li>
-        <li>Greek life requires 4.0 course units on your Penn transcript, so first semester is out either way.</li>
-      </ul>
-      <h2>Search</h2>
-      <p>The search box in the left nav looks across every page in every module, so if you only half-remember a program name, start there.</p>` }
-  ]
-},
-{
-  id:"involved", title:"Getting Involved on Campus", cap:"Getting Involved", art:"p2",
-  items:[
-    { id:"wharton-clubs", title:"Wharton clubs and student organizations", html:`
-      <p>Wharton clubs are overseen by the <b>Wharton Council</b>, which works with the Undergraduate Division on club budgets, recognition and registration, and general support. It currently recognizes and supports 40+ Wharton clubs, mostly pre-professional ones: investing, consulting, industry clubs and similar.</p>
-      <p>Wharton also has business fraternities and sponsored student organizations. The sponsored organizations include the Wharton Council itself, the Dean's Advisory Board, Wharton Together, and Wharton FGLI.</p>
-      <h2>Wharton clubs vs. SAC clubs</h2>
-      <p>Business-focused groups go through Wharton, not SAC. Academic and pre-professional groups affiliated with Wharton or Engineering must be recognized by the Wharton Council or the Engineering Student Activities Council. For a group to be a Wharton club, a simple majority of the executive board must be Wharton undergraduates.</p>
-      <h2>Applying</h2>
-      <p>The Wharton Council site covers recruitment policies, the types of clubs, and tips for the club application process — worth reading before you write your first application, since most clubs recruit on a shared calendar.</p>
-      <div class="linkrow">
-        ${pending("Every registered Wharton club")}
-        ${pending("Wharton Council home")}
-        ${pending("Every club at Penn")}
-      </div>` },
-    { id:"greek-life", title:"Greek life", html:`
-      <p>Penn's Office of Fraternity and Sorority Life (OFSL) recognizes chapters in three councils: the Intercultural Greek Council (IGC), the Interfraternity Council, and the Panhellenic Council. The Intercultural Greek Council includes culturally based and historically Black organizations, including the D9 fraternities and sororities.</p>
-      <h2>Eligibility</h2>
-      <p>You must be a full-time undergraduate in good standing with at least <b>4.0 course units completed on your Penn transcript</b>. That effectively rules out joining in your first semester.</p>
-      <h2>Sororities — Panhellenic Council</h2>
-      <p>Recruitment happens through Fall Continuous Open Bidding and Spring Primary Recruitment. Second-semester first-years and older students who meet the requirements can do primary recruitment, which rotates through each of the seven chapters on campus.</p>
-      <h2>Fraternities — Interfraternity Council</h2>
-      <p>Students register on Campus Director. During spring recruitment, chapters host events ranging from open houses to small coffee chats.</p>
-      <div class="note">
-        <b>Recognized vs. unrecognized groups</b>
-        Some off-campus groups are not recognized student organizations and are not part of Penn's fraternity and sorority community. Penn urges students and families to talk through the risks of joining them.
-      </div>
-      <div class="linkrow">
-        ${pending("OFSL: How to Join")}
-        ${pending("IFC recruitment portal")}
-        ${pending("OFSL guide for families")}
-      </div>
-      <p>On Instagram: @pennpanhellenic and @penn.ifc.</p>` },
-    { id:"crc", title:"Cultural Resource Centers", html:`
-      <p>Penn calls the intercultural homes <b>Cultural Resource Centers</b>. University Life runs six of them as community hubs for cultural celebration, academic engagement, and belonging.</p>
-      <ul>
-        <li><b>Greenfield Intercultural Center (GIC)</b> — builds intercultural understanding through activism, reflection, and dialogue.</li>
-        <li><b>Makuu: The Black Cultural Center</b> — supports students with an emphasis on students of African descent, using the seven principles of Kwanzaa as its framework.</li>
-        <li><b>La Casa Latina: The Center for Hispanic Excellence</b> — raises awareness of Latino issues, culture, and identity at Penn.</li>
-        <li><b>Pan-Asian American Community House (PAACH)</b> — the central advising resource for East Asian, South Asian, Southeast Asian, and Pacific Islander American students and their organizations.</li>
-        <li><b>LGBT Center</b> — peer mentorship, study and social space, and events; hosts over 25 undergraduate and graduate student groups.</li>
-        <li><b>Penn Women's Center</b></li>
-      </ul>
-      <p>Several of the centers are in the ARCH building at 3601 Locust Walk, and each center hosts open houses during the first weeks of the semester.</p>
-      <div class="linkrow">
-        ${pending("Cultural Resource Centers hub")}
-        ${pending("Overview of the centers (Penn Global)")}
-        ${pending("PAACH resources")}
-      </div>
-      <p>The PAACH resources page also links out to Penn First Plus, Civic House, and OFSL.</p>` }
-  ]
-},
-{
-  id:"global", title:"Global &amp; Experiential Learning", cap:"Global &amp; Experiential", art:"p3",
-  items:[
-    { id:"overview", title:"Where to start", html:`
-      <p>Penn and Wharton offer many ways to get experience outside a traditional classroom: a semester abroad, a summer working overseas, funded research, or a single week travelling with a Wharton course. Some are open in your first year; others are worth planning for now so you can do them later.</p>
-      <h2>The two hubs</h2>
-      <p><b>Wharton Global Opportunities</b> is Wharton's overview of international opportunities for undergraduates, covering semester study abroad, Penn Global Seminars, Penn Summer Abroad, Global Modular Courses, and W3i International Courses. Wharton encourages students to do at least one international experience during their undergraduate years.</p>
-      <p><b>Penn Abroad</b> is Penn's central hub for studying, researching, and interning abroad — semester programs, Penn Global Seminars, GRIP, Penn Global Research Institutes, funding, deadlines, and advising. <b>PASSPORT</b> is its application platform; most Penn Abroad programs are explored and applied to there.</p>
-      <div class="linkrow">
-        ${pending("Wharton Global Opportunities")}
-        ${pending("Penn Abroad")}
-        ${pending("PASSPORT")}
-      </div>
-      <div class="note">
-        <b>Look early at W3i, GRIP, and Penn Global Seminars</b>
-        Their applications can open much sooner than students expect. For Summer 2027, GRIP applications open November 4, 2026 and close January 6, 2027, unless an individual placement hits its cap first.
-      </div>` },
-    { id:"short-term", title:"Short-term programs: PGS, W3i, GMC", html:`
-      <h2>Penn Global Seminars (PGS)</h2>
-      <div class="facts">
-        <div><b>Good for</b><span>International travel without spending a whole semester abroad</span></div>
-        <div><b>When</b><span>Fall or spring course plus about a week of travel during a break</span></div>
-        <div><b>First-year eligible</b><span>Yes</span></div>
-      </div>
-      <p>Penn Global Seminars are regular 1 CU Penn courses that pair a semester of classroom learning with short-term international travel led by Penn faculty. They are open to full-time Penn undergraduates in any school or class year, though individual courses may have prerequisites.</p>
-      <p>PGS is unusually accessible. For 2026–27 the program fee is $950, covering round-trip airfare, accommodation, in-country transportation, entrance fees, and some meals. Penn financial aid can be applied to the fee.</p>
-      <p>Destinations and subjects change each year. Recent seminars have covered business communication in the United Kingdom, sustainability in Latin America, traditional Chinese medicine in China, and global aging in Malawi, with other courses travelling to Japan, Italy, Brazil, and Korea.</p>
-      <div class="linkrow">${pending("Explore Penn Global Seminars")}</div>
+const UPDATED = 'October 28, 2026';
+const CONTACT = { name: 'Nicolas', email: 'ndorazio@wharton.upenn.edu' };
 
-      <h2>W3i International Courses / Wharton International Program</h2>
-      <div class="facts">
-        <div><b>Course</b><span>WH 2980 — 0.5 CU</span></div>
-        <div><b>Good for</b><span>International business, companies, industries, and networking</span></div>
-        <div><b>When</b><span>Roughly 7–9 days during school breaks</span></div>
-        <div><b>First-year eligible</b><span>Yes, unless a specific course says otherwise</span></div>
-      </div>
-      <p>W3i courses, historically known as the Wharton International Program (WIP), are faculty-led experiential business courses. You travel to a destination for company visits, lectures at partner universities, cultural activities, and conversations with executives, alumni, and other business leaders.</p>
-      <p>The courses are built around understanding a region's business environment, comparing business models, learning local business practices, and developing intercultural communication skills. All Penn undergraduates in good academic standing can apply, though individual programs can add class-year restrictions, and you may do at most two W3i courses while at Penn.</p>
-      <p>Recent destinations include Tokyo, Portugal, Colombia, and Stockholm. Spring 2027 offerings include Stockholm plus domestic W3i experiences in Miami, Los Angeles, and San Francisco.</p>
-      <div class="linkrow">${pending("Explore W3i Courses")}</div>
+const U = {
+  // ---- core systems ----
+  path: 'https://path.at.upenn.edu/',
+  canvas: 'https://canvas.upenn.edu/',
+  mywharton: 'https://mywharton.wharton.upenn.edu/',
+  handshake: 'https://upenn.joinhandshake.com/',
+  campusExpress: 'https://prod.campusexpress.upenn.edu/',
+  pennkey: 'https://challengeresponse.apps.upenn.edu/challengeResponse/jsp/fast.do?fastStart=registerMyPennkey',
+  penncard: 'https://penncard.business-services.upenn.edu/students',
+  coursePlan: 'https://penncourseplan.com/',
+  courseReview: 'https://penncoursereview.com/',
+  courseAlert: 'https://penncoursealert.com/',
+  pennMobileIos: 'https://apps.apple.com/us/app/penn-mobile/id944829399',
+  pennMobileAndroid: 'https://play.google.com/store/apps/details?id=com.pennapps.labs.pennmobile',
+  mywhartonAndroid: 'https://play.google.com/store/apps/details?id=com.ucroo.wharton',
+  campusGroups: 'https://groups.wharton.upenn.edu/webapp/auth/login',
+  pennClubs: 'https://pennclubs.com/',
+  mobileOrdering: 'https://dining.business-services.upenn.edu/locations-hours-menus/mobile-ordering',
+  transit: 'https://transportation.upenn.edu/penn-transit-services',
+  o365: 'https://www.isc.upenn.edu/office365',
+  box: 'https://isc.upenn.edu/services/email-calendaring-collaboration/pennbox',
+  airpennnet: 'https://isc.upenn.edu/resources/connecting-airpennnet-and-joinnow',
+  printing: 'https://support.wharton.upenn.edu/help/printing-from-laptop-or-mobile-device',
+  zoom: 'https://upenn.zoom.us/',
+  whartonApps: 'https://support.wharton.upenn.edu/help/wharton-apps',
+  whartonization: 'https://support.wharton.upenn.edu/help/whartonization-guide',
+  canvasTools: 'https://support.wharton.upenn.edu/help/learning-tools-for-canvas',
+  // ---- academics ----
+  advising: 'https://undergrad-inside.wharton.upenn.edu/advising-services/',
+  peerAdvising: 'https://undergrad-inside.wharton.upenn.edu/peer-advising/',
+  academicResources: 'https://undergrad-inside.wharton.upenn.edu/academic-resources/',
+  weingarten: 'https://weingartencenter.universitylife.upenn.edu/',
+  tutoring: 'https://weingartencenter.universitylife.upenn.edu/tutoring-services/',
+  learning: 'https://weingartencenter.universitylife.upenn.edu/academic-support/',
+  disability: 'https://weingartencenter.universitylife.upenn.edu/disability-services/',
+  writing: 'https://writing.upenn.edu/',
+  // ---- library ----
+  library: 'https://www.library.upenn.edu/',
+  findLib: 'https://find.library.upenn.edu/',
+  lippincott: 'https://www.library.upenn.edu/lippincott',
+  lippGuide: 'https://guides.library.upenn.edu/lippincott',
+  rdds: 'https://www.library.upenn.edu/rdds',
+  citations: 'https://www.library.upenn.edu/services/manage-citations',
+  zotero: 'https://www.library.upenn.edu/software-and-tools/zotero',
+  news: 'https://www.library.upenn.edu/services/news-subscriptions',
+  yablon: 'https://www.library.upenn.edu/spaces/yablon-financial-resources-lab',
+  capiq: 'https://find.library.upenn.edu/catalog/9948549323503681',
+  pitchbook: 'https://find.library.upenn.edu/catalog/9977497628803681',
+  lseg: 'https://find.library.upenn.edu/catalog/9939051383503681',
+  statista: 'https://find.library.upenn.edu/catalog/9957467153503681',
+  abi: 'https://find.library.upenn.edu/catalog/9926083053503681',
+  wrds: 'https://wrds-www.wharton.upenn.edu/',
+  // ---- careers ----
+  careers: 'https://careerservices.upenn.edu/',
+  careersStudent: 'https://careerservices.upenn.edu/channels/student/',
+  careersHandshake: 'https://careerservices.upenn.edu/resources/handshake/',
+  // ---- involvement ----
+  whCouncil: 'https://groups.wharton.upenn.edu/whcouncil/',
+  whClubs: 'https://groups.wharton.upenn.edu/whcouncil/clubs/',
+  pennClubsInfo: 'https://osa.universitylife.upenn.edu/pennclubs',
+  ofslJoin: 'https://ofsl.universitylife.upenn.edu/joining/',
+  ifcPortal: 'https://upenn.mycampusdirector2.com',
+  ofslFamilies: 'https://universitylife.upenn.edu/the-office-of-fraternity-and-sorority-life-preparing-for-recruitment/',
+  crc: 'https://universitylife.upenn.edu/crc/',
+  gic: 'https://gic.universitylife.upenn.edu/',
+  makuu: 'https://makuu.universitylife.upenn.edu/',
+  casa: 'https://casalatina.universitylife.upenn.edu/',
+  paach: 'https://paach.universitylife.upenn.edu/resources/',
+  lgbt: 'https://lgbtcenter.universitylife.upenn.edu/',
+  pwc: 'https://pwc.universitylife.upenn.edu/',
+  civicHouse: 'https://civichouse.upenn.edu/',
+  netter: 'https://www.nettercenter.upenn.edu/',
+  pennFirstPlus: 'https://pennfirstplus.upenn.edu/',
+  whFgli: 'https://groups.wharton.upenn.edu/wfgli/home/',
+  wab: 'https://groups.wharton.upenn.edu/wabofficial/recruiting/',
+  leadVentures: 'https://leadership.wharton.upenn.edu/undergrad-ventures/',
+  isss: 'https://global.upenn.edu/isss/',
+  chaplain: 'https://chaplain.upenn.edu/',
+  osa: 'https://osa.universitylife.upenn.edu/about/',
+  psa: 'https://psa.universitylife.upenn.edu/about/',
+  // ---- global + research ----
+  whGlobal: 'https://undergrad-inside.wharton.upenn.edu/global-opportunities/',
+  pennAbroad: 'https://global.upenn.edu/pennabroad/',
+  passport: 'https://pennabroad.via-trm.com',
+  abroadAdvisors: 'https://global.upenn.edu/pennabroad/planning/advisors/',
+  pgs: 'https://global.upenn.edu/pennabroad/pgs/',
+  w3i: 'https://undergrad-inside.wharton.upenn.edu/wip/',
+  gmc: 'https://undergrad-inside.wharton.upenn.edu/gmcs/',
+  grip: 'https://global.upenn.edu/pennabroad/grip/',
+  gripApply: 'https://global.upenn.edu/pennabroad/grip/application-process/',
+  pgri: 'https://global.upenn.edu/pennabroad/pgri/',
+  summerAbroad: 'https://global.upenn.edu/pennabroad/summerabroad',
+  semesterAbroad: 'https://undergrad-inside.wharton.upenn.edu/study-abroad/',
+  approvedPrograms: 'https://undergrad-inside.wharton.upenn.edu/wharton-approved-programs/',
+  whResearch: 'https://undergrad-inside.wharton.upenn.edu/research/',
+  wrap: 'https://undergrad-inside.wharton.upenn.edu/research/wrap/',
+  sire: 'https://undergrad-inside.wharton.upenn.edu/research/sire/',
+  spur: 'https://undergrad-inside.wharton.upenn.edu/research/spur/',
+  internshipAward: 'https://undergrad-inside.wharton.upenn.edu/research/summer-internship-award/',
+  curf: 'https://curf.upenn.edu/',
+  curfDirectory: 'https://curf.upenn.edu/undergraduate-research/research-directory',
+  purm: 'https://curf.upenn.edu/content/penn-undergraduate-research-mentoring-program-purm',
+  // ---- health + safety ----
+  wellness: 'https://wellness.upenn.edu/',
+  helpNow: 'https://wellness.upenn.edu/get-help-now',
+  counseling: 'https://wellness.upenn.edu/student-health-counseling/counseling',
+  medical: 'https://wellness.upenn.edu/student-health-counseling/medical-care',
+  peerSupport: 'https://wellness.upenn.edu/peer-support',
+  publicHealth: 'https://wellness.upenn.edu/public-health-wellbeing/wellbeing-initiatives',
+  super: 'https://wellness.upenn.edu/wellbeing-initiatives/super-program-substance-use-prevention-education-and-recovery',
+  amnesty: 'https://wellness.upenn.edu/substance-use-policies',
+  whWellness: 'https://undergrad-inside.wharton.upenn.edu/health-wellness-resources/',
+  helpLine: 'https://www.publicsafety.upenn.edu/help-line/',
+  sis: 'https://sis.universitylife.upenn.edu/',
+  pvp: 'https://pvp.universitylife.upenn.edu/',
+  rec: 'https://recreation.upenn.edu/',
+  publicSafety: 'https://www.publicsafety.upenn.edu/',
+  escort: 'https://www.publicsafety.upenn.edu/about/security-services/',
+  shuttle: 'https://transportation.upenn.edu/evening-safety-shuttle-ride-share',
+  guardian: 'https://www.publicsafety.upenn.edu/safety-initiatives/pennguardian/',
+  upennAlert: 'https://www.publicsafety.upenn.edu/upa/',
+  specialServices: 'https://www.publicsafety.upenn.edu/about/special-services/',
+  lifeline: 'https://988lifeline.org/',
+  // ---- money + living ----
+  srfs: 'https://srfs.upenn.edu/',
+  billing: 'https://srfs.upenn.edu/billing-payment',
+  studentJobs: 'https://srfs.upenn.edu/student-employment',
+  emergencyFunds: 'https://sis.universitylife.upenn.edu/emergency-and-opportunity-funding/',
+  textbooks: 'https://www.library.upenn.edu/services/borrow-textbooks',
+  penncash: 'https://penncard.business-services.upenn.edu/penncash',
+  collegeHouses: 'https://collegehouses.upenn.edu/',
+  resServices: 'https://residential-services.business-services.upenn.edu/',
+  diningPlans: 'https://dining.business-services.upenn.edu/dining-plans/first-year',
+  diningHours: 'https://dining.business-services.upenn.edu/locations-hours-menus/locations',
+  foodGuide: 'https://guides.library.upenn.edu/food_resources',
+  pennFarm: 'https://wellness.upenn.edu/penn-farm',
+  bookstore: 'https://www.business-services.upenn.edu/services/bookstore',
+  techCenter: 'https://techcenter.upenn.edu/support/home',
+  libHours: 'https://www.library.upenn.edu/about/hours',
+  askLib: 'https://www.library.upenn.edu/services/ask-question',
+  // ---- Wharton undergraduate division ----
+  calendar: 'https://almanac.upenn.edu/penn-academic-calendar',
+  pathHelp: 'https://srfs.upenn.edu/registration-catalog-calendar/course-registration',
+  contacts: 'https://undergrad-inside.wharton.upenn.edu/contacts/',
+  academicAdvisors: 'https://undergrad-inside.wharton.upenn.edu/academic-advisors/',
+  meetPeer: 'https://undergrad-inside.wharton.upenn.edu/meet-your-peer-advisors/',
+  curriculum: 'https://undergrad-inside.wharton.upenn.edu/curriculum/',
+  fyFaq: 'https://undergrad-inside.wharton.upenn.edu/first-year-faq/',
+  fyReg: 'https://undergrad-inside.wharton.upenn.edu/first-year-registration/',
+  fyComms: 'https://undergrad-inside.wharton.upenn.edu/first-year-communications/',
+  step: 'https://undergrad-inside.wharton.upenn.edu/step/',
+  stepLinktree: 'https://linktr.ee/step.wharton',
+  concentrations: 'https://undergrad-inside.wharton.upenn.edu/concentrations/',
+  declare: 'https://undergrad-inside.wharton.upenn.edu/declaring-a-concentration/',
+  dualDegree: 'https://undergrad-inside.wharton.upenn.edu/dual-degree/',
+  submat: 'https://undergrad-inside.wharton.upenn.edu/submatriculation/',
+  policies: 'https://undergrad-inside.wharton.upenn.edu/academic-policies/',
+  petitions: 'https://undergrad-inside.wharton.upenn.edu/exceptions/',
+  forms: 'https://undergrad-inside.wharton.upenn.edu/academic-forms/',
+  jws: 'https://undergrad-inside.wharton.upenn.edu/jws/',
+  wrs: 'https://undergrad-inside.wharton.upenn.edu/wrs/',
+  summerOpps: 'https://undergrad-inside.wharton.upenn.edu/research/summer-opportunities/',
+  crw: 'https://undergrad-inside.wharton.upenn.edu/career-readiness/',
+  guide: 'https://groups.wharton.upenn.edu/guide/get-mentored/',
+  whWomen: 'https://groups.wharton.upenn.edu/whartonwomen',
+  whRecruiting: 'https://groups.wharton.upenn.edu/whcouncil/recruitment/',
+  campusGroupsHelp: 'https://support.wharton.upenn.edu/help/campusgroups-calendar',
+  mywhartonGuide: 'https://support.wharton.upenn.edu/help/mywharton-for-ugr-students',
+  // ---- writing ----
+  marks: 'https://markscenter.sas.upenn.edu/marks-family-writing-center',
+  marksAppt: 'https://upenn.mywconline.com',
+  criticalWriting: 'https://markscenter.sas.upenn.edu/courses-critical-writing-seminars',
+  bridgeMath: 'https://pennclubs.com/club/bridge-to-math/',
+  // ---- careers, detail ----
+  csTimeline: 'https://careerservices.upenn.edu/resources/four-year-undergraduate-career-timeline/',
+  csCommunities: 'https://careerservices.upenn.edu/channels/industry-communities/',
+  csPeer: 'https://careerservices.upenn.edu/peer-career-advisors/',
+  csWalkins: 'https://careerservices.upenn.edu/walk-ins/',
+  csFairs: 'https://careerservices.upenn.edu/career-fairs/',
+  csResume: 'https://careerservices.upenn.edu/resources/career-services-resume-guide/',
+  csCover: 'https://careerservices.upenn.edu/cover-letter-writing-guide/',
+  csCritique: 'https://careerservices.upenn.edu/resume-cover-letter-critiques/',
+  csOutcomes: 'https://careerservices.upenn.edu/post-graduate-outcomes/',
+  csCareerShift: 'https://careerservices.upenn.edu/resources/careershift/',
+  csFunding: 'https://careerservices.upenn.edu/sources-of-funding/',
+  myPenn: 'https://mypenn.upenn.edu',
+  haFunding: 'https://srfs.upenn.edu/financial-aid/highly-aided/summer',
+  dpOutcomes: 'https://www.thedp.com/article/2026/03/penn-career-services-class-2025-data-consulting-finance-decline',
+  dpFunding: 'https://www.thedp.com/article/2026/03/penn-career-services-summer-funding-2026-decrease-cut',
+  dpClubs: 'https://www.thedp.com/article/2025/09/penn-wharton-club-multiple-interviews-ban',
+  // ---- entrepreneurship + impact ----
+  ventureLab: 'https://venturelab.upenn.edu/for-students',
+  tangen: 'https://venturelab.upenn.edu/tangen-hall',
+  vip: 'https://venturelab.upenn.edu/venture-initiation-program',
+  startupAward: 'https://venturelab.upenn.edu/startup-internship-award',
+  betOn: 'https://venturelab.upenn.edu/bet-on-entrepreneurship',
+  innovationFund: 'https://entrepreneurship.wharton.upenn.edu/innovation-fund/',
+  civicCei: 'https://civichouse.upenn.edu/programs/community-engagement-internship/',
+  netterStudents: 'https://www.nettercenter.upenn.edu/get-involved/student-engagement-opportunities'
+};
+U.writing = U.marks;
 
-      <h2>Wharton Global Modular Courses (GMC)</h2>
-      <div class="facts">
-        <div><b>Good for</b><span>Upperclass students wanting an intensive Wharton course abroad</span></div>
-        <div><b>When</b><span>About 3–7 days during school breaks</span></div>
-        <div><b>First-year eligible</b><span>No — plan for junior or senior year</span></div>
-      </div>
-      <p>GMCs are intensive Wharton classes taught where the topic has particular relevance, combining Wharton faculty instruction, interaction with local universities, exposure to regional leaders, and project or team-based learning. They are open only to Wharton juniors and seniors plus MBA and EMBA students, and seniors are not eligible for May GMCs.</p>
-      <div class="linkrow">${pending("Explore Global Modular Courses")}</div>` },
-    { id:"summer-abroad-work", title:"Internships and research abroad: GRIP, WRAP, PGRI", html:`
-      <h2>Global Research &amp; Internship Program (GRIP)</h2>
-      <div class="facts">
-        <div><b>Good for</b><span>A full summer interning or doing research abroad</span></div>
-        <div><b>When</b><span>8–12 weeks over the summer</span></div>
-        <div><b>First-year eligible</b><span>Yes for many placements</span></div>
-      </div>
-      <p>GRIP is Penn's main international internship and research program, spanning business, finance, technology, engineering, healthcare, sustainability, community development, and more. There are three kinds of placement:</p>
-      <ul>
-        <li><b>Direct internship placements</b> put you with a specific employer abroad. More independence, and you may arrange your own housing.</li>
-        <li><b>Cohort internship placements</b> send a small group of Penn students to the same destination, with local partners matching students to employers and often helping with housing, visas, and airport pickup.</li>
-        <li><b>Research placements</b> put you on a specific project under a faculty investigator at a university abroad.</li>
-      </ul>
-      <p>All non-graduating, full-time Penn undergraduates may apply as long as they return to Penn the following fall; individual placements can add requirements. Every accepted student receives a guaranteed funding award, and Highly Aided students accepted to an on-site placement receive funding equal to 100% of the program's estimated cost.</p>
-      <div class="note">
-        <b>Summer 2027 dates</b>
-        Applications open November 4, 2026 and close January 6, 2027, or earlier if a placement reaches its application cap. Start browsing placements in the fall rather than waiting until spring.
-      </div>
-      <div class="linkrow">${pending("Explore GRIP")}</div>
-
-      <h2>World Research Assistantship Program (WRAP)</h2>
-      <div class="facts">
-        <div><b>Open to</b><span>Wharton undergraduates only</span></div>
-        <div><b>When</b><span>8–12 weeks over the summer, at least 20 hours a week</span></div>
-        <div><b>First-year eligible</b><span>Yes</span></div>
-      </div>
-      <p>WRAP places Wharton undergraduates as research assistants at a university or think tank outside Penn, usually abroad, working on business-related research under a research mentor. Participants can receive a taxable award of up to $6,000 for approved travel and lodging, and later submit a research summary and blog post and present at a research symposium.</p>
-      <p>The unusual part: you do not need to find an overseas professor yourself before applying. You identify a Wharton faculty advisor who helps develop the project and, if you are selected, helps connect you with an appropriate university or research institution. All Wharton undergraduates in good standing are eligible and prior research experience is not required.</p>
-      <p><b>WRAP vs. GRIP:</b> GRIP gives you a set of existing placements to apply to. WRAP is student-designed and specifically about business-related academic research.</p>
-      <div class="linkrow">${pending("Explore WRAP")}</div>
-
-      <h2>Penn Global Research Institutes (PGRI)</h2>
-      <div class="facts">
-        <div><b>Good for</b><span>Faculty-led, community-engaged research abroad</span></div>
-        <div><b>First-year eligible</b><span>Often yes; varies by institute</span></div>
-      </div>
-      <p>PGRI lets you do research abroad alongside Penn professors, local researchers, community members, and other Penn students. Projects generally tackle major global challenges and combine research training on campus with fieldwork abroad, and participants receive funding to offset required summer research and travel costs. Current institutes cover global education, climate adaptation, community research, documentary work, and other interdisciplinary fields.</p>
-      <div class="linkrow">${pending("Explore Penn Global Research Institutes")}</div>` },
-    { id:"funded-research", title:"Wharton funded research: SIRE, SPUR, PURM", html:`
-      <p>These are not necessarily international, but they are among the most important experiential opportunities open to Wharton undergraduates.</p>
-      <h2>Social Impact Research Experience (SIRE)</h2>
-      <div class="facts">
-        <div><b>Open to</b><span>Wharton undergraduates only</span></div>
-        <div><b>Good for</b><span>Social impact, policy, sustainability, healthcare, development, inequality, education</span></div>
-        <div><b>First-year eligible</b><span>Yes</span></div>
-      </div>
-      <p>SIRE provides up to ten awards for Wharton undergraduates to design and run independent research that promotes both economic and social value, domestically or internationally, using quantitative or qualitative methods. You work with a faculty advisor for the equivalent of at least 20 hours a week for roughly two months and can receive up to $6,000 for approved travel and lodging. Projects end with a formal research paper, publication through Penn's ScholarlyCommons, and a symposium presentation.</p>
-      <p><b>SIRE vs. WRAP:</b> SIRE is an independent project you design around economic and social impact. WRAP places you in a research assistant role with a researcher at another institution.</p>
-      <div class="linkrow">${pending("Explore SIRE")}</div>
-
-      <h2>Summer Program for Undergraduate Research (SPUR)</h2>
-      <div class="facts">
-        <div><b>Open to</b><span>Wharton undergraduates only</span></div>
-        <div><b>When</b><span>About 10 weeks over the summer, based at Penn</span></div>
-        <div><b>First-year eligible</b><span>Yes</span></div>
-      </div>
-      <p>SPUR supports independent research under a faculty mentor, carried out primarily on Penn's campus rather than abroad. Projects can be theoretical or applied and qualitative or quantitative. Students receive a taxable award of up to $6,000 and produce a research paper that can be published through ScholarlyCommons. Students working with Wharton faculty receive priority.</p>
-      <p><b>SPUR vs. SIRE:</b> SPUR can investigate essentially any business research question. SIRE requires the project to address both economic and social value.</p>
-      <div class="linkrow">${pending("Explore SPUR")}</div>
-
-      <h2>Penn Undergraduate Research Mentoring Program (PURM)</h2>
-      <div class="facts">
-        <div><b>Open to</b><span>All of Penn</span></div>
-        <div><b>When</b><span>10 weeks over the summer</span></div>
-        <div><b>First-year eligible</b><span>Yes — it is built for first- and second-years</span></div>
-      </div>
-      <p>PURM matches students finishing their first or second year with Penn faculty research projects. Unlike SPUR or SIRE, you apply to existing faculty projects instead of writing a full independent proposal. Projects run across the whole university, so Wharton students can explore business research as well as economics, psychology, healthcare, engineering, science, social science, and the humanities. It is one of the best entry points if you have little or no research experience.</p>
-      <div class="linkrow">${pending("Explore PURM through CURF")}</div>` },
-    { id:"study-abroad", title:"Semester and summer study abroad", html:`
-      <h2>Wharton semester study abroad</h2>
-      <div class="facts">
-        <div><b>Good for</b><span>The most immersive academic and cultural experience abroad</span></div>
-        <div><b>When</b><span>Fall or spring semester, most commonly junior year</span></div>
-        <div><b>First-year eligible</b><span>No, but start planning now</span></div>
-      </div>
-      <p>Wharton students can spend a semester at universities around the world while earning Penn credit. At Wharton-approved programs you can generally earn Business Breadth, Liberal Arts &amp; Sciences, and Unrestricted Elective credit; concentration requirements and Business Fundamentals generally cannot be completed abroad.</p>
-      <p>Wharton recommends planning about a year ahead. Sophomore spring is possible but carries additional academic requirements. Applicants generally need at least a 3.0 cumulative GPA and a 3.0 in each of the previous two semesters, alongside academic standing and course requirements.</p>
-      <p>Because the courses you take in your first two years can determine whether you are eligible later, tell your academic advisor early if a semester abroad is on your mind.</p>
-      <div class="linkrow">
-        ${pending("Wharton semester abroad information")}
-        ${pending("Wharton-approved programs")}
-      </div>
-
-      <h2>Penn Summer Abroad</h2>
-      <div class="facts">
-        <div><b>Good for</b><span>Taking classes internationally without missing a Penn semester</span></div>
-        <div><b>When</b><span>Roughly 1–10 weeks depending on the program</span></div>
-        <div><b>First-year eligible</b><span>Varies by program</span></div>
-      </div>
-      <p>Penn runs faculty-led and partner-university summer programs abroad. Wharton currently highlights Copenhagen Business School, the Chinese University of Hong Kong, and the Hong Kong University of Science and Technology as summer options Wharton students can take part in. Programs typically run four to ten weeks, and financial assistance may be available depending on the program.</p>
-      <div class="linkrow">${pending("Explore Penn Summer Study Abroad")}</div>
-
-      <h2>Wharton Summer Internship Award</h2>
-      <p>Wharton provides competitive funding for students completing qualifying unpaid or modestly paid internships with government agencies, nonprofits, or Certified B Corporations. Eligible unpaid internships can receive up to $500 per week for up to ten weeks, to a maximum of $5,000 — useful if you find a role you care about that you otherwise could not afford to take.</p>
-      <div class="linkrow">${pending("Wharton Summer Internship Award")}</div>` },
-    { id:"finder", title:"Program finder and first-year timeline", html:`
-      <h2>Which program should I look at?</h2>
-      <table class="data">
-        <thead><tr><th>If you want to…</th><th>Start with</th></tr></thead>
-        <tbody>
-          <tr><td>Travel internationally during your first year</td><td>Penn Global Seminar or W3i/WIP</td></tr>
-          <tr><td>Work abroad the summer after your first year</td><td>GRIP</td></tr>
-          <tr><td>Conduct business research abroad</td><td>WRAP</td></tr>
-          <tr><td>Conduct social-impact research in the U.S. or abroad</td><td>SIRE</td></tr>
-          <tr><td>Conduct independent Wharton research at Penn</td><td>SPUR</td></tr>
-          <tr><td>Try research for the first time</td><td>PURM</td></tr>
-          <tr><td>Do faculty-led field research abroad</td><td>Penn Global Research Institutes</td></tr>
-          <tr><td>Spend a whole semester abroad</td><td>Wharton semester abroad</td></tr>
-          <tr><td>Study abroad during the summer</td><td>Penn Summer Abroad</td></tr>
-          <tr><td>Take an intensive global Wharton course as an upperclassman</td><td>Global Modular Courses</td></tr>
-        </tbody>
-      </table>
-
-      <h2>Fall of first year</h2>
-      <p>Explore Penn Abroad and Wharton Global Opportunities, go to information sessions, and work out whether you are more interested in studying, researching, or working abroad. Look especially closely at W3i/WIP, GRIP, and upcoming Penn Global Seminars, since their applications come earlier than students expect. For Summer 2027, GRIP opens November 4, 2026 and closes January 6, 2027 unless a placement caps out first.</p>
-
-      <h2>Spring of first year</h2>
-      <p>Look for summer research funding — WRAP, SIRE, SPUR, and PURM. Many Penn summer research applications are due somewhere between February and March, though deadlines move annually. If a semester abroad is a possibility, start looking at destinations and talk with your academic advisor about how it fits your Wharton curriculum.</p>
-
-      <h2>Summer after first year</h2>
-      <ul>
-        <li>GRIP — internship or research abroad</li>
-        <li>WRAP — business research abroad</li>
-        <li>SIRE — independent social-impact research</li>
-        <li>SPUR — independent Wharton research at Penn</li>
-        <li>PURM — Penn faculty research</li>
-        <li>Penn Summer Abroad — courses abroad</li>
-      </ul>
-
-      <h2>Where to get help</h2>
-      <ul>
-        <li><b>Penn Abroad advisors</b> — advising and drop-in appointments for choosing between programs.</li>
-        <li><b>Wharton Undergraduate Research</b> — the central resource for WRAP, SIRE, SPUR, research assistantships, research courses, and research advising.</li>
-        <li><b>CURF</b> — Penn's main resource for faculty research opportunities, grants, fellowships, and PURM.</li>
-        <li><b>Penn Abroad student ambassadors and blogs</b> — read about past students' experiences and contact people who have done these programs.</li>
-      </ul>
-      <div class="note">
-        <b>You do not need to know what you want yet</b>
-        The point of reading this in your first semester is simply knowing these exist. Many programs have applications months before the experience starts, so early exploring buys you far more options later.
-      </div>` }
-  ]
-},
-{
-  id:"career", title:"Career Planning", cap:"Career Planning", art:"p4",
-  items:[
-    { id:"career-services", title:"Career Services and Handshake", html:`
-      <div class="note">
-        <b>One office serves everyone</b>
-        There is no separate Wharton undergraduate career office. Career Services is the central career resource for Penn undergraduates in the College, Engineering, Nursing, and Wharton alike. Separate offices exist only for Wharton MBA/EMBA, Dental, Law, and Vet — Wharton's own site simply points undergrads to Career Services.
-      </div>
-      <p><a href="https://careerservices.upenn.edu" target="_blank" rel="noopener">careerservices.upenn.edu</a> · Undergraduate hub: <a href="https://careerservices.upenn.edu/channels/student/" target="_blank" rel="noopener">careerservices.upenn.edu/channels/student</a></p>
-      <p>3935 Walnut Street, Suite 300 · (215) 898-7531 · careerservices@vpul.upenn.edu</p>
-
-      <h2>Handshake is the system of record</h2>
-      <p>Handshake is where you find job and internship listings, employer events, and appointment scheduling, and where on-campus interview schedules are arranged. Log in at <a href="https://upenn.joinhandshake.com" target="_blank" rel="noopener">upenn.joinhandshake.com</a>. In the Jobs section, the "interviewing on campus" filter shows which employers are running interviews specifically for Penn students.</p>
-
-      <h2>Advising comes in three tiers</h2>
-      <ul>
-        <li><b>Full appointments</b> with a career advisor, requested through Handshake.</li>
-        <li><b>Same-day drop-ins</b> — from 9:15 AM ET on weekdays you can request a 15-minute session for later that day, by Zoom or Handshake video.</li>
-        <li><b>Peer Career Advisors</b> — trained undergraduates who handle quick questions from fellow students.</li>
-      </ul>` },
-    { id:"recruiting", title:"Exploration and on-campus recruiting", html:`
-      <h2>Exploring before you recruit</h2>
-      <ul>
-        <li><b>Industry communities</b> — 20+ field-specific hubs with resources, jobs, and guides, including an investment banking interview prep workshop and a finance technical mock interview guide. Log in with PennKey to get customized emails for the communities you follow.</li>
-        <li><b>Vault</b> — in-depth intelligence on industries, companies, and professions.</li>
-        <li><b>Year-by-year planning timelines</b> for first-years through seniors.</li>
-        <li><b>Career fairs</b> — Career Link and the Spring Career Fair span multiple industries, alongside targeted events like the Policy and Government Career Fair.</li>
-      </ul>
-
-      <h2>On-campus recruiting (OCI/OCR)</h2>
-      <p>Employers interview on campus in both fall and spring, for internships and full-time roles, across financial services, consulting, technology, engineering, and more. Mock interviews by job type and industry are available.</p>
-      <p>The most common format is the <b>pre-select schedule</b>: the employer reviews applications and picks whom to interview. In-person interviews are held at 3935 Walnut Street. More than 250 employers hold information sessions on campus each year, often with recent Penn alumni in the room.</p>
-
-      <h2>Timing</h2>
-      <p>Timing is industry-specific and moves earlier every year. Career Services points students to the industry communities and the Outcomes tab for real hiring timelines rather than assuming one shared calendar. Finance and consulting run far ahead of most other fields.</p>
-      <div class="note">
-        <b>Offer deadlines</b>
-        Career Services encourages employers to give students two weeks to decide on offers extended in 2026. That is a guideline, not a rule, so flag exploding offers to an advisor.
-      </div>` },
-    { id:"funding-network", title:"Funding and networking", html:`
-      <h2>Summer funding has been cut back</h2>
-      <p>Career Services has significantly reduced summer funding. For summer 2026 it was limited to the Turner Schulman Human Rights Internship Award, which is open only to College students and grants up to $5,000; the executive director said no other funds were available for summer 2026.</p>
-      <h3>Still available</h3>
-      <ul>
-        <li><b>SRFS</b> — Highly Aided first-years, sophomores, and juniors can receive up to $5,000 for a 6–12 week unpaid or underpaid internship or research opportunity.</li>
-        <li><b>CURF research grants</b></li>
-        <li><b>Penn Global Research &amp; Internship Program (GRIP)</b></li>
-        <li><b>Venture Lab StartUp Internship Award</b></li>
-        <li><b>Civic House internships</b></li>
-      </ul>
-
-      <h2>Networking</h2>
-      <p><b>MyPenn</b>, formerly QuakerNet, is Penn's searchable alumni directory, and <b>CareerShift</b> helps you build contact lists. The Wharton-specific pipeline is really the clubs: treks, coffee chats, and firm workshops happen through club programming, which is why the clubs module and this one belong together.</p>
-      <p>After graduation, alumni keep access and can schedule up to three appointments per 12-month period — though anyone within a year of graduating is not subject to that limit.</p>` }
-  ]
-},
-{
-  id:"academics", title:"Academic Foundations &amp; Advising", cap:"Academics &amp; Advising", art:"p6",
-  items:[
-    { id:"academic-support", title:"Academic support", html:`
-      <h2>Weingarten Center</h2>
-      <p>Penn's central academic-support hub: undergraduate tutoring, learning consultations, academic-skills workshops, study strategies, and disability services. Start here if you are struggling in a course or want to strengthen how you approach college coursework.</p>
-      <div class="linkrow">
-        <a href="https://weingartencenter.universitylife.upenn.edu/" target="_blank" rel="noopener">Weingarten Center</a>
-        <a href="https://weingartencenter.universitylife.upenn.edu/tutoring-services/" target="_blank" rel="noopener">Undergraduate tutoring</a>
-        <a href="https://weingartencenter.universitylife.upenn.edu/academic-support/" target="_blank" rel="noopener">Learning consultations and workshops</a>
-      </div>
-      <ul>
-        <li><b>Tutoring</b> — free peer tutoring for selected courses, drop-in or by appointment. Especially useful for quantitative and STEM courses.</li>
-        <li><b>Learning consultations</b> — one-on-one work with learning specialists on study strategies, academic reading and writing, time management, and exam prep. Where tutoring is about the course, this is about how you learn.</li>
-        <li><b>Workshops and study strategies</b> — resources on studying, time management, and academic success, best used before you fall behind rather than after.</li>
-      </ul>
-
-      <h2>Course-specific support</h2>
-      <ul>
-        <li><b>TA office hours</b> — clarify concepts, work through problem sets, and prepare for exams. Bring specific questions or work you have already attempted.</li>
-        <li><b>Professor office hours</b> — you do not need to be struggling to go. They are also how you build a relationship with a professor and explore material beyond lecture.</li>
-        <li><b>Bridge to Math</b> — a peer-based initiative for strengthening your mathematical foundation and moving into Penn's quantitative coursework, useful alongside calculus and other math-heavy classes.</li>
-      </ul>` },
-    { id:"wharton-advising", title:"Wharton advising", html:`
-      <ul>
-        <li><b>Wharton academic advising</b> — a professional advising team that helps you navigate the curriculum, course selection, requirements, concentrations, registration, and longer-term planning. Every Wharton undergraduate is assigned an academic advisor. <a href="https://undergrad-inside.wharton.upenn.edu/advising-services/" target="_blank" rel="noopener">Advising services</a></li>
-        <li><b>Wharton peer advisors</b> — juniors and seniors who give student-to-student guidance on courses, concentrations, and navigating Wharton. Best for quick questions and firsthand perspective. Found in ARB Suite 1400. <a href="https://undergrad-inside.wharton.upenn.edu/peer-advising/" target="_blank" rel="noopener">Peer advising</a></li>
-        <li><b>Concentration advisors</b> — faculty and departmental advisors for understanding a specific concentration and planning coursework in it. Use them when you want depth in one field. <a href="https://undergrad-inside.wharton.upenn.edu/academic-resources/" target="_blank" rel="noopener">Academic resources</a></li>
-      </ul>
-      <div class="note">
-        <b>Mention long-term plans early</b>
-        Study abroad eligibility, concentration sequencing, and submatriculation all depend on courses taken in your first two years. Advisors can only route around a constraint they know about.
-      </div>` },
-    { id:"planning-tools", title:"Planning and registration tools", html:`
-      <ul>
-        <li><b>Path@Penn</b> — the main student portal for registration, academic records, and student information. Get familiar with it before registration opens. <a href="https://path.at.upenn.edu/" target="_blank" rel="noopener">path.at.upenn.edu</a></li>
-        <li><b>Path Planner</b> — maps potential courses across future semesters so you can think through your academic path before registering.</li>
-        <li><b>Penn Course Review</b> — student-generated course and instructor ratings. One input among several, alongside syllabi, requirements, and advisor input. <a href="https://penncoursereview.com/" target="_blank" rel="noopener">penncoursereview.com</a></li>
-        <li><b>Penn Course Plan</b> — a mock scheduler for building and comparing draft schedules. <a href="https://penncourseplan.com/" target="_blank" rel="noopener">penncourseplan.com</a></li>
-        <li><b>Penn Course Alert</b> — notifies you when a seat opens in a closed course. <a href="https://penncoursealert.com/" target="_blank" rel="noopener">penncoursealert.com</a></li>
-      </ul>` },
-    { id:"writing-research", title:"Writing, research, and other support", html:`
-      <h2>Writing and research</h2>
-      <ul>
-        <li><b>Marks Family Center for Excellence in Writing</b> — feedback on your writing process, organization, argument, and revision. <a href="https://writing.upenn.edu/" target="_blank" rel="noopener">writing.upenn.edu</a></li>
-        <li><b>Lippincott Library</b> — Wharton's business library: databases and research support for company, industry, market, and financial information. <a href="https://guides.library.upenn.edu/lippincott" target="_blank" rel="noopener">Lippincott guide</a></li>
-        <li><b>Penn Libraries</b> — research databases, journals, books, research help, and study space. Librarians can help you find sources in unfamiliar areas. <a href="https://www.library.upenn.edu/" target="_blank" rel="noopener">library.upenn.edu</a></li>
-      </ul>
-      <h2>Other support and systems</h2>
-      <ul>
-        <li><b>Weingarten Disability Services</b> — supports Penn's accommodations process and provides approved academic accommodations. Connect early if you anticipate needing them. <a href="https://weingartencenter.universitylife.upenn.edu/disability-services/" target="_blank" rel="noopener">Disability services</a></li>
-        <li><b>MyWharton</b> — Wharton's student portal: advisor information, calendars, announcements, groups, and links to Wharton resources. <a href="https://mywharton.wharton.upenn.edu/" target="_blank" rel="noopener">mywharton.wharton.upenn.edu</a></li>
-        <li><b>Canvas</b> — course sites, readings, assignments, announcements, and grades for most classes. <a href="https://canvas.upenn.edu/" target="_blank" rel="noopener">canvas.upenn.edu</a></li>
-        <li><b>PennO365</b> — free Microsoft 365 for Penn students: Word, Excel, PowerPoint, Outlook, Teams, OneNote. <a href="https://www.isc.upenn.edu/office365" target="_blank" rel="noopener">isc.upenn.edu/office365</a></li>
-      </ul>` }
-  ]
-},
-{
-  id:"library", title:"Library &amp; Knowledge Resources", cap:"Library &amp; Research", art:"p5",
-  items:[
-    { id:"financial-data", title:"Financial and business research", html:`
-      <p>These are the professional-grade platforms behind most Wharton coursework, club projects, and research assistantships. Nearly all of them cost thousands of dollars a year outside Penn, so they are worth learning early.</p>
-      <h3>Bloomberg Terminal</h3>
-      <p>Professional financial-market data, company financials, analyst estimates, securities information, economic data, and news, on the terminals in Lippincott Library's Yablon Financial Resources Lab.</p>
-      <div class="linkrow"><a href="https://www.library.upenn.edu/spaces/yablon-financial-resources-lab" target="_blank" rel="noopener">Yablon Financial Resources Lab</a></div>
-      <h3>S&amp;P Capital IQ</h3>
-      <p>Company and financial research: public and private company profiles, financial statements, valuation data, transactions, ownership information, earnings estimates, and comparable-company analysis.</p>
-      <div class="linkrow"><a href="https://find.library.upenn.edu/catalog/9948549323503681" target="_blank" rel="noopener">Capital IQ at Penn Libraries</a></div>
-      <h3>PitchBook</h3>
-      <p>Startups, venture capital, private equity, investors, funds, acquisitions, financing rounds, and private-company valuations. The first stop for entrepreneurship, VC, and PE projects.</p>
-      <div class="linkrow"><a href="https://find.library.upenn.edu/catalog/9977497628803681" target="_blank" rel="noopener">PitchBook at Penn Libraries</a></div>
-      <h3>LSEG Workspace</h3>
-      <p>Formerly Refinitiv Workspace. Financial markets data, company financials, analyst research, earnings estimates, ownership information, economic data, news, and global securities information.</p>
-      <div class="linkrow"><a href="https://find.library.upenn.edu/catalog/9939051383503681" target="_blank" rel="noopener">LSEG Workspace at Penn Libraries</a></div>
-      <h3>Wharton Research Data Services (WRDS)</h3>
-      <p>Wharton's own research-data platform for accessing and analyzing large financial, accounting, economic, and business datasets. Especially useful for research assistants, independent research, quantitative coursework, and pulling datasets too large for a normal database interface.</p>
-      <div class="linkrow"><a href="https://wrds-www.wharton.upenn.edu/" target="_blank" rel="noopener">WRDS</a></div>` },
-    { id:"industry-market", title:"Industry and market research", html:`
-      <h3>IBISWorld</h3>
-      <p>Industry reports covering market size, competitors, growth trends, cost structures, barriers to entry, and outlook. Useful for consulting cases, startup research, and getting up to speed on an unfamiliar industry fast.</p>
-      <h3>Statista</h3>
-      <p>Statistics, surveys, forecasts, and market data across hundreds of industries and countries — the quickest route to a market-size figure, a consumer trend, a demographic breakdown, or a ready-made chart.</p>
-      <div class="linkrow"><a href="https://find.library.upenn.edu/catalog/9957467153503681" target="_blank" rel="noopener">Statista at Penn Libraries</a></div>
-      <h3>Euromonitor Passport</h3>
-      <p>Global market research focused on consumer industries: retail, food, apparel, beauty, travel, and consumer behavior across countries.</p>
-      <h3>Mintel</h3>
-      <p>Consumer-market research on purchasing behavior, attitudes, brands, demographics, and industry trends. Strongest for marketing, consumer-products, and brand-strategy projects.</p>
-      <h3>EMIS</h3>
-      <p>Emerging-markets platform combining company information, industry reports, economic data, and business news across international markets.</p>
-      <div class="note">
-        <b>Finding the ones without a direct link</b>
-        IBISWorld, Euromonitor Passport, Mintel, and EMIS are all reachable by searching their name in the Penn Libraries database finder.
-        <div class="linkrow" style="margin-bottom:0"><a href="https://find.library.upenn.edu/" target="_blank" rel="noopener">find.library.upenn.edu</a></div>
-      </div>` },
-    { id:"news", title:"News and current events", html:`
-      <p>Penn pays for subscriptions most students never activate. All four below are free with your PennKey through the library's news subscriptions page.</p>
-      <div class="linkrow"><a href="https://www.library.upenn.edu/services/news-subscriptions" target="_blank" rel="noopener">Activate your news subscriptions</a></div>
-      <ul>
-        <li><b>Wall Street Journal</b> — business, markets, economics, and financial news.</li>
-        <li><b>Financial Times</b> — international business, markets, economics, and corporate news.</li>
-        <li><b>Bloomberg.com</b> — Bloomberg news, Businessweek, Bloomberg TV, and mobile-app content. This is separate from the Bloomberg Terminal.</li>
-        <li><b>The New York Times</b> — national and international news, politics, business, science, culture, and opinion.</li>
-      </ul>
-      <h2>Searchable news archives</h2>
-      <ul>
-        <li><b>Factiva</b> — newspapers, trade publications, and international news sources. The place to go for company and industry history, and for older WSJ coverage.</li>
-        <li><b>Nexis Uni</b> — news, business publications, company information, legal materials, and historical articles that are hard to surface through Google.</li>
-      </ul>
-      <p>Both are found by searching their name at <a href="https://find.library.upenn.edu/" target="_blank" rel="noopener">find.library.upenn.edu</a>.</p>` },
-    { id:"academic-databases", title:"Academic research databases", html:`
-      <ul>
-        <li><b>Google Scholar</b> — search academic papers, then use Penn Libraries access to open articles that would otherwise sit behind publisher paywalls. <a href="https://scholar.google.com/" target="_blank" rel="noopener">scholar.google.com</a></li>
-        <li><b>ABI/INFORM Global</b> — business and management research: academic journals, industry publications, dissertations, company information, and trade publications. <a href="https://find.library.upenn.edu/catalog/9926083053503681" target="_blank" rel="noopener">ABI/INFORM at Penn Libraries</a></li>
-        <li><b>Business Source Complete</b> — full-text business database covering management, finance, marketing, economics, and accounting.</li>
-        <li><b>JSTOR</b> — journal articles, books, and primary sources across the humanities, social sciences, and business. Authenticate through Penn for paid content. <a href="https://www.jstor.org/" target="_blank" rel="noopener">jstor.org</a></li>
-        <li><b>Web of Science</b> — scholarly articles, citation tracking, and identifying the influential papers or researchers in a field.</li>
-        <li><b>PubMed</b> — biomedical and life-sciences literature, useful for healthcare, biotech, and interdisciplinary work. <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov</a></li>
-      </ul>
-      <h2>Citation tools</h2>
-      <ul>
-        <li><b>Zotero</b> — saves articles and webpages, organizes PDFs, and generates citations and bibliographies. Penn gives current students unlimited Zotero cloud storage. <a href="https://www.library.upenn.edu/software-and-tools/zotero" target="_blank" rel="noopener">Zotero at Penn</a></li>
-        <li><b>Citation management support</b> — help with Zotero, EndNote, RefWorks, Mendeley, and others, plus workshops and research consultations. <a href="https://www.library.upenn.edu/services/manage-citations" target="_blank" rel="noopener">Manage citations</a></li>
-      </ul>` },
-    { id:"research-help", title:"Research help and data support", html:`
-      <div class="note">
-        <b>Ask a librarian before you spend three hours searching</b>
-        Lippincott's business librarians do this for a living. Market sizing, private-company information, analyst research, and "which database has this" are exactly the questions they want.
-      </div>
-      <ul>
-        <li><b>Lippincott Library business research help</b> — company research, market sizing, industry reports, analyst research, financial data, private-company information, and choosing the right database for a project. <a href="https://www.library.upenn.edu/lippincott" target="_blank" rel="noopener">library.upenn.edu/lippincott</a></li>
-        <li><b>Research Data &amp; Digital Scholarship</b> — support for data analysis, visualization, GIS, Python, R, text mining, research data management, and digital research methods. <a href="https://www.library.upenn.edu/rdds" target="_blank" rel="noopener">library.upenn.edu/rdds</a></li>
-        <li><b>Penn Libraries database finder</b> — the full collection of business, academic, scientific, news, legal, and data resources. Start here when you know what you need but not where it lives. <a href="https://find.library.upenn.edu/" target="_blank" rel="noopener">find.library.upenn.edu</a></li>
-      </ul>` }
-  ]
-},
-{
-  id:"apps", title:"Apps &amp; Online Services", cap:"Apps &amp; Services", art:"p7",
-  items:[
-    { id:"accounts", title:"Accounts, registration, and records", html:`
-      <p>Set these up first — almost everything else at Penn sits behind them.</p>
-      <ul>
-        <li><b>PennKey</b> — your universal login for nearly every Penn system, including email, Canvas, Path@Penn, and WiFi. Set it up before you arrive. <a href="https://challengeresponse.apps.upenn.edu/challengeResponse/jsp/fast.do?fastStart=registerMyPennkey" target="_blank" rel="noopener">Register your PennKey</a></li>
-        <li><b>PennCard</b> — your official Penn ID. Building access, library and rec access, and a PennCash debit card for on-campus purchases. <a href="https://penncard.business-services.upenn.edu/students" target="_blank" rel="noopener">PennCard for students</a></li>
-        <li><b>Path@Penn</b> — registration, financial aid, billing, academic records, and your personal and privacy settings. <a href="https://path.at.upenn.edu/" target="_blank" rel="noopener">path.at.upenn.edu</a></li>
-        <li><b>Campus Express</b> — one stop for your PennCard photo, textbooks or a computer, a dining plan, property registration, and a discounted transit pass. Log in with PennKey. <a href="https://prod.campusexpress.upenn.edu/" target="_blank" rel="noopener">Campus Express</a></li>
-        <li><b>Canvas</b> — Penn's learning management system: course sites, readings, assignments, and grades for most classes. <a href="https://canvas.upenn.edu/" target="_blank" rel="noopener">canvas.upenn.edu</a></li>
-      </ul>` },
-    { id:"courses-campus", title:"Courses, campus life, and getting around", html:`
-      <h2>Building a schedule</h2>
-      <p>The three Penn Course tools are built by Penn Labs, a student organization, and most students use all three together.</p>
-      <ul>
-        <li><b>Penn Course Plan</b> — a mock scheduler that pulls in Course Review ratings and Course Alert, so you can build and compare draft schedules before registering. <a href="https://penncourseplan.com/" target="_blank" rel="noopener">penncourseplan.com</a></li>
-        <li><b>Penn Course Review</b> — course and instructor ratings from past semesters. <a href="https://penncoursereview.com/" target="_blank" rel="noopener">penncoursereview.com</a></li>
-        <li><b>Penn Course Alert</b> — emails or texts you the moment a seat opens in a closed course. <a href="https://penncoursealert.com/" target="_blank" rel="noopener">penncoursealert.com</a></li>
-      </ul>
-
-      <h2>Campus life and dining</h2>
-      <ul>
-        <li><b>Penn Mobile</b> — book group study rooms, check laundry machine availability, see dining hall hours and menus, and read campus news. Built by Penn Labs, not an official University app.
-          <div class="linkrow" style="margin:6px 0 0">
-            <a href="https://apps.apple.com/us/app/penn-mobile/id944829399" target="_blank" rel="noopener">iOS</a>
-            <a href="https://play.google.com/store/apps/details?id=com.pennapps.labs.pennmobile" target="_blank" rel="noopener">Android</a>
-          </div>
-        </li>
-        <li><b>Penn Eats</b> — the official Penn Dining mobile ordering app. Order ahead, pay with Dining Dollars, and reserve meals including kosher options. Search "Transact Mobile Ordering" in your app store. <a href="https://dining.business-services.upenn.edu/locations-hours-menus/mobile-ordering" target="_blank" rel="noopener">Mobile ordering info</a></li>
-        <li><b>CampusGroups</b> — Penn's official events and organization-management platform: RSVP to events, track club involvement, and get announcements from orgs you have joined. <a href="https://groups.wharton.upenn.edu/webapp/auth/login" target="_blank" rel="noopener">CampusGroups login</a></li>
-        <li><b>Penn Clubs</b> — the central hub for Penn's 600+ registered student organizations. Browse, join, and follow clubs. <a href="https://pennclubs.com/" target="_blank" rel="noopener">pennclubs.com</a></li>
-      </ul>
-
-      <h2>Transportation</h2>
-      <p><b>Penn Transit Mobile</b> tracks shuttles and buses in real time, plans routes, and requests the free evening safety shuttle, which is available to all PennCard holders. <a href="https://transportation.upenn.edu/penn-transit-services" target="_blank" rel="noopener">Penn Transit Services</a></p>` },
-    { id:"wharton-apps", title:"Wharton apps and Canvas tools", html:`
-      <ul>
-        <li><b>MyWharton (web)</b> — Wharton's central student portal: personalized dashboard, event calendar, student directory, and a searchable library of Wharton resource links. <a href="https://mywharton.wharton.upenn.edu/" target="_blank" rel="noopener">mywharton.wharton.upenn.edu</a></li>
-        <li><b>MyWharton (mobile, "MyWharton v2")</b> — the portal on your phone: calendar, announcements, advisor info, groups, and saved links. <a href="https://play.google.com/store/apps/details?id=com.ucroo.wharton" target="_blank" rel="noopener">Android</a> · search "MyWharton" on the iOS App Store.</li>
-        <li><b>Wharton Attendance, Absence &amp; Video Requests</b> — request excused absences and access class video recordings for specific course dates. Accessed through Canvas. <a href="https://support.wharton.upenn.edu/help/wharton-apps" target="_blank" rel="noopener">Wharton apps overview</a></li>
-        <li><b>Virtual Lab (VLab)</b> — 24/7 remote access to virtual computers preloaded with the same software as Wharton's public computer labs. <a href="https://support.wharton.upenn.edu/help/whartonization-guide" target="_blank" rel="noopener">Whartonization guide</a></li>
-      </ul>
-      <h2>Tools that live inside Canvas</h2>
-      <ul>
-        <li><b>NameCoach</b> — lets classmates and faculty hear the correct pronunciation of your name and see your pronouns. <a href="https://support.wharton.upenn.edu/help/learning-tools-for-canvas" target="_blank" rel="noopener">Canvas learning tools</a></li>
-        <li><b>Ed Discussion</b> — the course Q&amp;A and discussion forum many Penn and Wharton classes use instead of, or alongside, email.</li>
-        <li><b>Respondus LockDown Browser</b> — a locked-down browser some instructors require for proctored quizzes and exams.</li>
-      </ul>` },
-    { id:"it-productivity", title:"IT, productivity, and the rest", html:`
-      <ul>
-        <li><b>PennO365</b> — the full Microsoft 365 suite free: Word, Excel, PowerPoint, Teams, Outlook, OneNote. Sign in with PennKey. <a href="https://www.isc.upenn.edu/office365" target="_blank" rel="noopener">isc.upenn.edu/office365</a></li>
-        <li><b>Penn+Box</b> — unlimited secure cloud storage for keeping and sharing files. <a href="https://isc.upenn.edu/services/email-calendaring-collaboration/pennbox" target="_blank" rel="noopener">Penn+Box</a></li>
-        <li><b>AirPennNet</b> — the campus wireless network; connect through your WiFi settings. <a href="https://isc.upenn.edu/resources/connecting-airpennnet-and-joinnow" target="_blank" rel="noopener">Setup help</a></li>
-        <li><b>PaperCut</b> — campus printing. Tap your PennCard at any Penn or Wharton printer, or print from the web portal, and track your balance. <a href="https://support.wharton.upenn.edu/help/printing-from-laptop-or-mobile-device" target="_blank" rel="noopener">Printing from a laptop or phone</a></li>
-        <li><b>Zoom @ Penn</b> — the official video platform for classes, office hours, and meetings. Sign in with PennKey. <a href="https://upenn.zoom.us/" target="_blank" rel="noopener">upenn.zoom.us</a></li>
-        <li><b>Handshake</b> — the official job and internship recruiting platform: apply to postings, sign up for info sessions, and book career advising. <a href="https://upenn.joinhandshake.com/" target="_blank" rel="noopener">upenn.joinhandshake.com</a></li>
-        <li><b>Penn Libraries</b> — databases, e-journals, interlibrary loan, and free subscriptions to the New York Times, WSJ, and Bloomberg. <a href="https://www.library.upenn.edu/" target="_blank" rel="noopener">library.upenn.edu</a></li>
-      </ul>` }
-  ]
-}
+/* ---------------- Coming Up ----------------
+   date: YYYY-MM-DD. end (optional): last day of a range.
+   window: true  -> shows "Opens …" before it starts and "Closes …" while open.
+   tbd: true     -> marked "tentative" (office hasn’t confirmed yet). */
+const DATES = [
+  // ---- Penn academic calendar (almanac.upenn.edu) ----
+  { t: 'Advance registration for Spring 2027', date: '2026-10-26', end: '2026-11-09', tag: 'academic', u: U.path, n: 'Request spring classes in Path@Penn. Draft a schedule in Penn Course Plan first.' },
+  { t: 'Last day to withdraw from a fall course', date: '2026-11-02', tag: 'academic', u: U.calendar, n: 'After this you’re in the course for good. Talk to your advisor first.' },
+  { t: 'Thanksgiving: Thursday/Friday classes meet', date: '2026-11-24', end: '2026-11-25', tag: 'academic', u: U.calendar, n: 'Tue Nov 24 follows a Thursday schedule; Wed Nov 25 follows a Friday schedule.' },
+  { t: 'Thanksgiving break', date: '2026-11-26', end: '2026-11-29', tag: 'break', u: U.calendar },
+  { t: 'Last day of fall classes', date: '2026-12-07', tag: 'academic', u: U.calendar, n: 'Reading days Dec 8–9.' },
+  { t: 'Fall final exams', date: '2026-12-10', end: '2026-12-17', tag: 'academic', u: U.calendar },
+  { t: 'Spring classes begin', date: '2027-01-20', tag: 'academic', u: U.calendar, n: 'No classes Mon Jan 18 (MLK Day).' },
+  { t: 'Course selection period ends', date: '2027-02-02', tag: 'academic', u: U.calendar, n: 'Last day to add a spring course.' },
+  { t: 'Spring drop period ends', date: '2027-03-01', tag: 'academic', u: U.calendar, n: 'Last day to drop with no record on your transcript.' },
+  { t: 'Spring break', date: '2027-03-06', end: '2027-03-14', tag: 'break', u: U.calendar },
+  { t: 'Last day to switch a spring course to pass/fail', date: '2027-03-29', tag: 'academic', u: U.calendar },
+  { t: 'Advance registration for Fall 2027', date: '2027-03-29', end: '2027-04-12', tag: 'academic', u: U.path },
+  { t: 'Last day to withdraw from a spring course', date: '2027-04-05', tag: 'academic', u: U.calendar },
+  { t: 'Last day of spring classes', date: '2027-05-04', tag: 'academic', u: U.calendar, n: 'Reading days May 5–6.' },
+  { t: 'Spring final exams', date: '2027-05-07', end: '2027-05-17', tag: 'academic', u: U.calendar },
+  // ---- applications + opportunities ----
+  { t: 'Penn Wharton Innovation Fund deadline', date: '2026-11-01', tag: 'career', u: U.innovationFund, n: 'Funding for student startups; any Penn student can lead an application. Due 11:59 pm ET.' },
+  { t: 'Penn Wharton Innovation Fund deadline', date: '2027-01-24', tag: 'career', u: U.innovationFund, n: 'Funding for student startups; any Penn student can lead. Next round Mar 14.' },
+  { t: 'Penn Wharton Innovation Fund deadline', date: '2027-03-14', tag: 'career', u: U.innovationFund, n: 'Final round of the year.' },
+  { t: 'Career Readiness @ Wharton (CR@W) sessions', date: '2027-02-05', end: '2027-02-26', tag: 'career', u: U.crw, n: 'Four Friday sessions (Feb 5, 12, 19, 26). The application opens in November.' },
+  { t: 'GRIP applications (Summer 2027)', date: '2026-11-04', end: '2027-01-06', window: true, tag: 'apply', u: U.gripApply,
+    n: 'Closes at noon ET, or earlier if a placement hits its application cap. Start browsing placements now.' },
+  { t: 'Penn Summer Abroad applications', date: '2026-11-01', end: '2027-02-15', window: true, tag: 'apply', u: U.summerAbroad,
+    n: 'Early deadline Jan 31, final deadline Feb 15.' },
+  { t: 'SIRE proposals due', date: '2027-02-12', tbd: true, tag: 'apply', u: U.sire, n: 'Wharton social-impact research. Date from CURF’s calendar.' },
+  { t: 'PURM applications due', date: '2027-02-15', tbd: true, tag: 'apply', u: U.purm, n: 'Faculty research for first- and second-years.' },
+  { t: 'SPUR proposals due', date: '2027-03-19', tbd: true, tag: 'apply', u: U.spur, n: 'Independent Wharton research at Penn.' },
+  { t: 'Wharton Summer Internship Award (rolling)', date: '2027-01-15', end: '2027-04-27', window: true, tbd: true, tag: 'apply', u: U.internshipAward,
+    n: 'Up to $5,000 for unpaid government, nonprofit, or B Corp internships. Reviewed on a rolling basis.' }
 ];
 
-/* ========================= app ========================= */
-const view = document.getElementById('view');
-const crumbs = document.getElementById('crumbs');
-const KEY = 'penn-hub-done-v1';
+/* ---------------- Need Help Now ---------------- */
+const HELP = [
+  { t: 'Counseling (CAPS), 24/7', tel: '215-898-7021', n: 'Talk to a counselor any time, including nights and weekends.', u: U.counseling },
+  { t: 'Wellness at Penn, 24/7', tel: '215-746-9355', n: '215-746-WELL: one number for any health or wellbeing question.', u: U.wellness },
+  { t: 'Penn HELP Line, 24/7', tel: '215-898-4357', n: '215-898-HELP: not sure where to turn? Start here.', u: U.helpLine },
+  { t: 'Student Health (medical care)', tel: '215-746-3535', n: 'Sick or hurt and it’s not an emergency.', u: U.medical },
+  { t: 'Walking Escort, 24/7', tel: '215-898-9255', n: '215-898-WALK: free walk home anywhere from 30th to 43rd St.', u: U.escort },
+  { t: 'Suicide & Crisis Lifeline', tel: '988', n: 'Call or text 988, any time.', u: U.lifeline }
+];
 
-const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const strip = h => h.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
-const findMod = id => MODULES.find(m => m.id === id);
+/* ---------------- First-semester checklist ---------------- */
+const CHECKLIST = [
+  { id: 'pennkey', t: 'Set up your PennKey and two-step verification', n: `<a href="${U.pennkey}" target="_blank" rel="noopener">PennKey setup</a>` },
+  { id: 'phone', t: 'Save Penn Police and CAPS numbers in your phone', n: '215-573-3333 (police) and 215-898-7021 (counseling, 24/7)' },
+  { id: 'apps', t: 'Download Penn Mobile and MyWharton', n: `<a href="${U.pennMobileIos}" target="_blank" rel="noopener">Penn Mobile (iOS)</a> · <a href="${U.pennMobileAndroid}" target="_blank" rel="noopener">Android</a>` },
+  { id: 'advisor', t: 'Meet your Wharton academic advisor', n: `<a href="${U.advising}" target="_blank" rel="noopener">Advising services</a>` },
+  { id: 'oh', t: 'Go to office hours once in every class, before you need to', n: 'Easier to ask for help later once they know your face.' },
+  { id: 'news', t: 'Activate your free WSJ, NYT, FT, and Bloomberg', n: `<a href="${U.news}" target="_blank" rel="noopener">Library news subscriptions</a>` },
+  { id: 'clubs', t: 'Join one or two clubs or communities', n: `<a href="${U.whClubs}" target="_blank" rel="noopener">Wharton clubs</a> · <a href="${U.pennClubs}" target="_blank" rel="noopener">Penn Clubs</a>` },
+  { id: 'crc', t: 'Stop by a Cultural Resource Center', n: `<a href="${U.crc}" target="_blank" rel="noopener">The six centers</a>` },
+  { id: 'handshake', t: 'Make a Handshake profile and upload a resume', n: `<a href="${U.handshake}" target="_blank" rel="noopener">Handshake</a>` },
+  { id: 'grip', t: 'Browse GRIP placements before applications close', n: `<a href="${U.grip}" target="_blank" rel="noopener">GRIP</a>, open Nov 4 to Jan 6` },
+  { id: 'spring', t: 'Draft a spring schedule before advance registration', n: `<a href="${U.coursePlan}" target="_blank" rel="noopener">Penn Course Plan</a>` },
+  { id: 'deadlines', t: 'Learn this term’s drop and withdraw deadlines', n: 'Fall 2026: withdraw by Nov 2. Spring 2027: drop by Mar 1, withdraw by Apr 5.' }
+];
 
-let done = new Set();
-try { const raw = localStorage.getItem(KEY); if (raw) done = new Set(JSON.parse(raw)); } catch (e) {}
-function saveDone(){ try { localStorage.setItem(KEY, JSON.stringify([...done])); } catch (e) {} }
-function key(m,i){ return m + '/' + i; }
-function modDone(m){ return m.items.filter(it => done.has(key(m.id,it.id))).length; }
+/* ---------------- Who do I ask? ---------------- */
+const ASK = [
+  ['Which classes should I take? Am I on track?', `Your <a href="${U.advising}" target="_blank" rel="noopener">Wharton academic advisor</a>; for quick questions, <a href="${U.peerAdvising}" target="_blank" rel="noopener">peer advisors</a>.`],
+  ['I’m falling behind in a class.', `Office hours first, then <a href="${U.tutoring}" target="_blank" rel="noopener">Weingarten tutoring</a> and learning consultations.`],
+  ['I’m stressed, anxious, or just not okay.', `<a href="${U.counseling}" target="_blank" rel="noopener">Counseling</a> at 215-898-7021, any time. Wharton students can also press 2 for a Wharton-based counselor.`],
+  ['I need accommodations.', `<a href="${U.disability}" target="_blank" rel="noopener">Weingarten Disability Services</a>. Start early: approval takes time.`],
+  ['Money is tight, or I have a bill or aid question.', `<a href="${U.srfs}" target="_blank" rel="noopener">SRFS</a> for aid and billing; <a href="${U.emergencyFunds}" target="_blank" rel="noopener">emergency funding</a>; <a href="${U.pennFirstPlus}" target="_blank" rel="noopener">Penn First Plus</a>.`],
+  ['Resume, internships, or “what do I even want to do?”', `<a href="${U.careers}" target="_blank" rel="noopener">Career Services</a> drop-ins (book through Handshake).`],
+  ['Study abroad or a global program.', `<a href="${U.abroadAdvisors}" target="_blank" rel="noopener">Penn Abroad advisors</a> and drop-in hours.`],
+  ['I want to do research.', `<a href="${U.whResearch}" target="_blank" rel="noopener">Wharton Undergraduate Research</a> or <a href="${U.curf}" target="_blank" rel="noopener">CURF</a>.`],
+  ['Roommate or housing trouble.', `Your RA or GA first, then your <a href="${U.collegeHouses}" target="_blank" rel="noopener">College House</a> office.`],
+  ['Laptop, WiFi, or printing problems.', `<a href="${U.techCenter}" target="_blank" rel="noopener">Tech Center</a> in Van Pelt, or <a href="${U.whartonization}" target="_blank" rel="noopener">Wharton Computing</a> for Wharton tools.`]
+];
 
-/* ---- theme ---- */
-try {
-  const t = localStorage.getItem('penn-hub-theme');
-  if (t) document.documentElement.setAttribute('data-theme', t);
-} catch (e) {}
-document.getElementById('theme').addEventListener('click', () => {
-  const cur = document.documentElement.getAttribute('data-theme');
-  const next = cur === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', next);
-  try { localStorage.setItem('penn-hub-theme', next); } catch (e) {}
-});
-document.getElementById('menu').addEventListener('click', () => {
-  document.getElementById('nav').classList.toggle('collapsed');
-});
-document.querySelectorAll('[data-go]').forEach(b => {
-  b.addEventListener('click', () => { location.hash = b.dataset.go; });
-});
-document.getElementById('q').addEventListener('keydown', e => {
-  if (e.key === 'Enter') location.hash = '#/search/' + encodeURIComponent(e.target.value.trim());
-});
+/* ---------------- Your first year at a glance ---------------- */
+const TIMELINE = [
+  { h: 'Fall', tag: 'September – December', items: [
+    'Settle in. Go to office hours early and meet your academic advisor.',
+    'Club applications cluster in September. Apply broadly, and don’t panic over rejections.',
+    'Explore Penn Abroad and Wharton Global; go to info sessions.',
+    '<b>GRIP</b> opens Nov 4. Penn Summer Abroad opens Nov 1. The CR@W application opens in November.',
+    'Advance registration for spring runs Oct 26 – Nov 9. Last day to withdraw is Nov 2.',
+    'Finals in December. Weingarten runs exam-prep workshops.'
+  ]},
+  { h: 'Winter Break', tag: 'December – January', items: [
+    '<b>GRIP closes Jan 6</b> at noon ET.',
+    'Update your resume and Handshake profile.',
+    'Shortlist summer options: research (PURM, SPUR, SIRE, WRAP), GRIP, internships.',
+    'Rest. Seriously.'
+  ]},
+  { h: 'Spring', tag: 'January – May', items: [
+    'Classes start Jan 20. Wharton clubs run a centralized application round in late January.',
+    'Greek recruitment is open once you have 4.0 CUs on your transcript.',
+    'Research deadlines run Feb–Mar: SIRE (~Feb 12), PURM (~Feb 15), SPUR (~Mar 19).',
+    'Career Readiness @ Wharton meets on Fridays in February; spring career fairs too.',
+    'Thinking about a semester abroad or a dual degree? Bring it up with your advisor now.',
+    'Advance registration for fall: Mar 29 – Apr 12. Joseph Wharton Scholars applications are in May.'
+  ]},
+  { h: 'Summer', tag: 'May – August', items: [
+    'GRIP, WRAP, SIRE, SPUR, or PURM research and internships.',
+    'Penn Summer Abroad, or a W3i trip in May.',
+    'An internship, a job, or a break all count. Most first-years are still exploring.',
+    'Unpaid nonprofit or government role? Apply for the Wharton Summer Internship Award.'
+  ]}
+];
 
-/* ---- rendering ---- */
-function setCrumbs(parts){
-  crumbs.innerHTML = parts.map((p,i) =>
-    (i ? '<span class="sep">/</span>' : '') +
-    (p.hash ? '<button data-h="' + p.hash + '">' + p.label + '</button>' : '<span>' + p.label + '</span>')
-  ).join(' ');
-  crumbs.querySelectorAll('button').forEach(b => b.onclick = () => location.hash = b.dataset.h);
-}
-function setNav(where){
-  document.querySelectorAll('.navlink').forEach(b =>
-    b.setAttribute('aria-current', String(b.dataset.go === where)));
-}
+/* ---------------- Detail text shared by several pop-ups ---------------- */
+const FY = 'Yes', NOTYET = 'Not yet: plan for later';
 
-function tile(m){
-  const total = m.items.length, d = modDone(m);
-  return '<button class="tile" data-mod="' + m.id + '">' +
-    '<span class="art"><span class="photo ' + m.art + '"></span><span class="cap">' + m.cap + '</span></span>' +
-    '<span class="label">' + m.title + '</span>' +
-    '<span class="prog">' + d + ' of ' + total + ' pages done</span>' +
-  '</button>';
-}
+/* ---------------- The boards ---------------- */
+const SECTIONS = [
+{ id: 'start', nav: 'Start Here', title: 'Start Here', intro: 'What’s coming up, who to call, and what to get done this semester.',
+  cells: [
+    { h: 'Coming Up', cls: 's2', body: () => renderDates() },
+    { h: 'Need Help Now?', red: true, body: () => renderHelp() },
+    { h: 'Most-Used Links', rows: [
+      { t: 'Path@Penn', u: U.path, m: 'Registration, records, bills' },
+      { t: 'Canvas', u: U.canvas, m: 'Course sites and grades' },
+      { t: 'MyWharton', u: U.mywharton, m: 'Wharton portal' },
+      { t: 'Penn Course Plan', u: U.coursePlan, m: 'Mock schedules' },
+      { t: 'Handshake', u: U.handshake, m: 'Jobs and career advising' },
+      { t: 'CampusGroups', u: U.campusGroups, m: 'Wharton clubs and events' },
+      { t: 'Campus Express', u: U.campusExpress, m: 'Dining plan, PennPass' },
+      { t: 'Penn Libraries', u: U.library, m: 'Databases and study spaces' },
+      { t: 'Penn Dining hours', u: U.diningHours, m: 'Menus and locations' }
+    ]},
+    { h: 'First-Semester Checklist', body: () => renderChecklist() },
+    { h: 'Who Do I Ask?', body: () => ASK.map(([q, a]) => `<div class="ask"><div class="ask-q">${q}</div><div class="ask-a">${a}</div></div>`).join('') }
+  ]},
 
-function renderHome(){
-  setNav('#/home');
-  setCrumbs([{label:'First-Year Hub'}, {label:'Modules'}]);
-  const solo = MODULES.filter(m => m.solo);
-  const rest = MODULES.filter(m => !m.solo);
-  let rows = '';
-  solo.forEach(m => { rows += '<tr><td></td><td>' + tile(m) + '</td><td></td></tr>'; });
-  for (let i = 0; i < rest.length; i += 3){
-    const cells = rest.slice(i, i + 3).map(m => '<td>' + tile(m) + '</td>');
-    while (cells.length < 3) cells.push('<td></td>');
-    rows += '<tr>' + cells.join('') + '</tr>';
+{ id: 'year', nav: 'Your Year', title: 'Your First Year at a Glance', intro: 'What to think about each season. Nothing here is required, but the deadlines come sooner than most people expect.',
+  board: 'b4', cells: TIMELINE.map(s => ({ h: s.h, tag: s.tag, body: () => `<div class="season"><ul>${s.items.map(i => `<li>${i}</li>`).join('')}</ul></div>` })) },
+
+{ id: 'academics', nav: 'Academics', title: 'Academics & Advising', intro: 'Your advising team, registration tools, and where to go when a class gets hard.',
+  cells: [
+    { h: 'Your Advising Team', rows: [
+      { t: 'Wharton academic advisor', u: U.advising, m: 'Assigned to you', d: {
+        f: [['Who', 'Every Wharton undergraduate is assigned a professional academic advisor; yours is named in your Path@Penn profile'], ['Best for', 'Course selection, requirements, concentrations, registration, long-term planning'], ['Booking', 'Use the remote or in-person scheduler on the advising services page. New slots open on Fridays for the following week; book at least 12 hours ahead.']],
+        b: `<p>Wharton’s professional advising team helps you work through the curriculum, choose courses, understand requirements and concentrations, register, and plan further ahead.</p>
+            <h3>Mention long-term plans early</h3>
+            <p>Study abroad eligibility, concentration sequencing, dual degrees, and submatriculation all depend on courses you take in your first two years. Advisors can only plan around a constraint they know about.</p>`,
+        l: [['Meet the advisors', U.academicAdvisors]] } },
+      { t: 'Wharton peer advisors', u: U.peerAdvising, m: 'Juniors and seniors', d: {
+        f: [['Who', 'Wharton juniors and seniors'], ['Where', 'ARB Suite 1400 front desk, weekdays 9–5'], ['Best for', 'Quick questions and a student’s view of courses and concentrations']],
+        b: '<p>Peer advisors give student-to-student guidance on courses, concentrations, and getting around Wharton. Use them for quick questions and firsthand perspective; use your professional advisor for anything official.</p>',
+        l: [['Meet the peer advisors', U.meetPeer]] } },
+      { t: 'Wharton Undergraduate Division', u: U.contacts, m: 'ARB 1400', n: '265 S. 37th St · <a href="tel:2158987608">215-898-7608</a> · <a href="mailto:undergradinfo@wharton.upenn.edu">undergradinfo@wharton.upenn.edu</a>' },
+      { t: 'Concentration advisors', u: U.concentrations, m: 'Faculty', n: 'For going deep on one field once you’re leaning toward a concentration.' },
+      { t: 'Wharton GUIDE mentoring', u: U.guide, m: 'Upperclass mentor', n: 'Get matched with an upperclass Wharton student mentor.' },
+      { t: 'Your College House team', u: U.collegeHouses, m: 'Where you live', n: 'RAs, GAs, and house staff for anything about living at Penn.' }
+    ]},
+    { h: 'Registration & Planning', rows: [
+      { t: 'Path@Penn', u: U.path, m: 'Official system', n: 'Register, see your records and holds, and use Path Planner to map future semesters. <a href="' + U.pathHelp + '" target="_blank" rel="noopener">How-to guides</a>' },
+      { t: 'Penn Course Plan', u: U.coursePlan, m: 'Mock scheduler', n: 'Build and compare draft schedules; pulls in ratings and seat alerts.' },
+      { t: 'Penn Course Review', u: U.courseReview, m: 'Student ratings', n: 'Course and instructor ratings. One input alongside syllabi and your advisor.' },
+      { t: 'Penn Course Alert', u: U.courseAlert, m: 'Seat alerts', n: 'Texts or emails you when a seat opens in a full class.' },
+      { t: 'Penn academic calendar', u: U.calendar, m: 'Official dates', n: 'Breaks, finals, and registration windows. The key ones are in “Coming Up” above.' },
+      { t: 'First-year registration guide', u: U.fyReg, p: ['wh'], m: 'Wharton', n: 'How registration works for Wharton first-years, step by step.' }
+    ]},
+    { h: 'When a Class Gets Hard', rows: [
+      { t: 'Drop, withdraw & pass/fail deadlines', m: '2026–27 dates', d: {
+        f: [['Fall 2026', 'Drop by Oct 5 · pass/fail by Oct 23 · withdraw by Nov 2'], ['Spring 2027', 'Add by Feb 2 · drop by Mar 1 · pass/fail by Mar 29 · withdraw by Apr 5']],
+        b: `<p><b>Dropping</b> a course before the drop deadline leaves no record. <b>Withdrawing</b> after that leaves a W on your transcript but no grade. <b>Pass/fail</b> changes the grade type, but every course in your first semester must be letter-graded, and there are limits on which requirements a pass/fail course can fill, so check Wharton’s policies first.</p>
+            <p>Before any of these, talk to your academic advisor: dropping below a full course load can affect financial aid, housing, and visa status, and some courses are prerequisites for next semester.</p>`,
+        l: [['Penn academic calendar', U.calendar], ['Wharton academic policies', U.policies]] } },
+      { t: 'Office hours', m: 'Start here', d: {
+        f: [['Who', 'Your TAs and professors'], ['When', 'Listed on each course’s Canvas site or syllabus']],
+        b: `<p><b>TA office hours</b> are for clarifying concepts, working through problem sets, and preparing for exams. Bring specific questions or work you’ve already attempted.</p>
+            <p><b>Professor office hours</b> aren’t only for when you’re struggling. They’re how you build a relationship with a professor and explore material beyond lecture, and that relationship is what later turns into research opportunities and recommendation letters.</p>` } },
+      { t: 'Weingarten tutoring', u: U.tutoring, m: 'Free', p: ['free'], n: 'Peer tutoring for selected courses. Book in TracCloud at least 48 hours ahead, or drop in at Houston Market, Mon–Thu 7:45–10:30 pm.' },
+      { t: 'Learning consultations', u: U.learning, m: 'One-on-one', n: 'Tutoring is about the course; this is about how you study, manage time, and prepare for exams.' },
+      { t: 'Marks Family Writing Center', u: U.marks, m: '<a href="' + U.marksAppt + '" target="_blank" rel="noopener">Book a session</a>', n: 'Feedback on organization, argument, and revision at any stage of a draft, including your Critical Writing Seminar papers.' },
+      { t: 'Bridge to Math', u: U.bridgeMath, m: 'Student club', n: 'Student-run peer support for moving into Penn’s quantitative courses.' },
+      { t: 'Weingarten Disability Services', u: U.disability, m: 'Accommodations', n: 'Connect early if you think you’ll need accommodations. Approval takes time.' }
+    ]},
+    { h: 'Wharton First-Year Basics', cls: 's3', cols: true, rows: [
+      { t: 'Your STEP cohort', u: U.step, p: ['wh'], m: 'Your first community', d: {
+        f: [['What', 'STEP: Successful Transition and Empowerment Program'], ['Size', '10 cohorts of about 60 first-years, split into pods led by upperclass cohort directors'], ['Linked to', 'WH 1010 Business & You, which you take with your cohort in the fall']],
+        b: '<p>STEP is how Wharton first-years are organized into communities. Your cohort and pod are the people you’ll see in WH 1010, at townhalls, and at cohort events like treks, socials, and service days. Your cohort directors are upperclassmen whose job is to help you settle in, so ask them anything.</p>',
+        l: [['STEP Linktree', U.stepLinktree]] } },
+      { t: 'The Wharton curriculum', u: U.curriculum, m: '37 CUs to graduate', d: {
+        f: [['Total', 'At least 37 course units (single degree)'], ['Leadership Journey', 'WH 1010 Business & You (first fall) → WH 2010 → MGMT 3010'], ['Business Fundamentals', 'Accounting, economics (BEPP 2500), finance, legal studies, management, marketing, operations (OIDD), and statistics'], ['Flex Fundamentals', 'Global Economy, Business & Society; Technology, Innovation & Analytics'], ['Depth', 'Business Breadth (3 CU) and a concentration (4 CU)'], ['Liberal Arts & Sciences', 'Humanities, natural science/math/engineering, social science, cross-cultural perspectives, and two semesters of a language'], ['Also', '5 unrestricted electives and a senior capstone']],
+        b: `<h3>What first-years usually take</h3>
+            <ul><li><b>WH 1010</b> (0.5 CU) in the fall, with your STEP cohort.</li>
+            <li><b>BEPP 1000</b> (economics) and a math course.</li>
+            <li>A <b>Critical Writing Seminar</b> in either semester.</li>
+            <li>Liberal arts courses that also explore possible interests.</li></ul>
+            <h3>First-semester rules</h3>
+            <p>The fall cap is 5.5 CU and every first-semester course must be letter-graded. Some upper-level Wharton courses aren’t open to first-years. Check the first-year FAQ before you register.</p>`,
+        l: [['First-year FAQ', U.fyFaq], ['Critical Writing Seminars', U.criticalWriting]] } },
+      { t: 'Concentrations', u: U.concentrations, m: 'Declare from 4th semester', d: {
+        f: [['When', 'You can first declare in your 4th semester (sophomore spring); declaring by the end of junior year is recommended'], ['How', 'Talk to an advisor, then submit the Declare/Update Field of Study form']],
+        b: '<p>A concentration is Wharton’s version of a major: Finance, Marketing, Management, Business Analytics, and many more. You don’t need to pick one now. Use your first year to sample, and talk to concentration advisors once something clicks.</p>',
+        l: [['How to declare', U.declare]] } },
+      { t: 'Dual degrees & submatriculation', u: U.dualDegree, p: ['later'], m: 'Plan early', n: 'Apply for a dual degree after two semesters (3.40 GPA minimum). <a href="' + U.submat + '" target="_blank" rel="noopener">Submatriculation</a> lets you start a master’s early.' },
+      { t: 'Joseph Wharton Scholars', u: U.jws, m: 'Honors program', n: 'Mostly invited at admission; first-years who weren’t can apply in May.' },
+      { t: 'Wharton Research Scholars', u: U.wrs, p: ['later'], m: 'Sophomores and juniors', n: 'A year-long research thesis program (WH 2990).' },
+      { t: 'Policies, petitions & forms', u: U.policies, m: 'The official rules', n: '<a href="' + U.petitions + '" target="_blank" rel="noopener">Petitions</a> for exceptions · <a href="' + U.forms + '" target="_blank" rel="noopener">academic forms</a>' },
+      { t: 'Your class email list', u: U.fyComms, m: 'wugr list', n: 'You’re auto-subscribed to your class’s Wharton undergraduate (“UGR”) list. Read it; that’s where deadlines show up first.' }
+    ]}
+  ]},
+
+{ id: 'involved', nav: 'Get Involved', title: 'Getting Involved', intro: 'Clubs, Greek life, cultural centers, and service. Most first-years try a few things in the fall and narrow down by spring.',
+  cells: [
+    { h: 'Clubs & Organizations', rows: [
+      { t: 'How Wharton clubs work', m: 'Read first', d: {
+        f: [['Overseen by', 'Wharton Council, with the Wharton Undergraduate Division'], ['How many', '50+ recognized Wharton clubs, mostly pre-professional'], ['Applications', 'No resumes, one interview of 30 minutes or less, no technical questions or group cases; decisions through Penn Clubs within two weeks']],
+        b: `<p>Wharton clubs are overseen by the <b>Wharton Council</b>, which works with the Undergraduate Division on club budgets, recognition, registration, and general support. Most are pre-professional: investing, consulting, industry clubs, and similar.</p>
+            <h3>Wharton clubs vs. SAC clubs</h3>
+            <p>Business-focused groups go through Wharton rather than the Student Activities Council (SAC). Academic and pre-professional groups affiliated with Wharton or Engineering must be recognized by the Wharton Council or the Engineering Student Activities Council. For a group to be a Wharton club, a simple majority of its executive board must be Wharton undergraduates. A club not on the Council’s list is outside its jurisdiction.</p>
+            <h3>Applying</h3>
+            <p>Since fall 2025, Wharton Council’s recruitment policy caps the process: clubs can’t ask for resumes, can hold only one interview per applicant (30 minutes max), and can’t use technical questions or group cases. Decisions come through Penn Clubs within two weeks. There’s a centralized application window each semester. In spring 2026 it ran in late January, so watch your email in January for the spring round.</p>
+            <p>Rejections still happen and say little about you. Apply broadly, and keep at least one club with no application in the mix.</p>
+            <h3>Sponsored student organizations</h3>
+            <p>Wharton also has business fraternities and sponsored organizations, including the Wharton Council itself, the Wharton Dean’s Undergraduate Advisory Board, Wharton Together, and Wharton FGLI.</p>`,
+        l: [['Recruitment policies', U.whRecruiting], ['All Wharton clubs', U.whClubs], ['Penn Clubs', U.pennClubs], ['Daily Pennsylvanian coverage', U.dpClubs]] } },
+      { t: 'Every Wharton club', u: U.whClubs, m: 'Official list' },
+      { t: 'Wharton Council', u: U.whCouncil, m: 'Wharton club umbrella', n: '<a href="' + U.whRecruiting + '" target="_blank" rel="noopener">Club recruitment rules</a>' },
+      { t: 'Wharton Women', u: U.whWomen, m: 'Large community club' },
+      { t: 'Penn Clubs', u: U.pennClubs, m: '600+ groups', n: 'Every registered club at Penn: browse, filter, and follow. Log in with PennKey.' },
+      { t: 'CampusGroups', u: U.campusGroups, m: 'Wharton events', n: 'RSVP to events and get announcements from Wharton groups you join. Filter for “New UGR Students.” <a href="' + U.campusGroupsHelp + '" target="_blank" rel="noopener">How to use it</a>' },
+      { t: 'Dean’s Undergraduate Advisory Board', u: U.wab, p: ['fy'], m: 'Recruits each fall', n: 'Student voice to the Wharton dean; takes about five first-years each fall.' },
+      { t: 'Wharton Leadership Ventures', u: U.leadVentures, m: 'Expeditions', n: 'Outdoor leadership trips open to Penn undergraduates.' }
+    ]},
+    { h: 'Greek Life', tag: 'Eligible once you have 4.0 CUs on your Penn transcript', rows: [
+      { t: 'How joining works', u: U.ofslJoin, m: 'Eligibility', d: {
+        f: [['Run by', 'Office of Fraternity and Sorority Life (OFSL)'], ['Eligibility', 'Full-time undergraduate in good standing with at least 4.0 course units on your Penn transcript'], ['First-years', 'Spring semester at the earliest']],
+        b: `<p>OFSL recognizes chapters in three councils: the <b>Intercultural Greek Council</b> (IGC), the <b>Interfraternity Council</b> (IFC), and the <b>Panhellenic Council</b>. The 4.0 course-unit rule effectively rules out joining in your first semester.</p>`,
+        l: [['OFSL: How to join', U.ofslJoin]] } },
+      { t: 'Panhellenic Council (sororities)', m: 'Spring primary', d: {
+        f: [['Recruitment', 'Fall Continuous Open Bidding and Spring Primary Recruitment'], ['Instagram', '@pennpanhellenic']],
+        b: '<p>Second-semester first-years and older students who meet the requirements can do primary recruitment, which rotates through each of the seven chapters on campus.</p>',
+        l: [['OFSL: How to join', U.ofslJoin]] } },
+      { t: 'Interfraternity Council (fraternities)', m: 'Spring', d: {
+        f: [['Register', 'Through Campus Director'], ['Instagram', '@penn.ifc']],
+        b: '<p>Students register on Campus Director. During spring recruitment, chapters host events ranging from open houses to small coffee chats.</p>',
+        l: [['IFC registration (Campus Director)', U.ifcPortal], ['OFSL: How to join', U.ofslJoin]] } },
+      { t: 'Intercultural Greek Council', m: 'Culturally based', d: {
+        b: '<p>The IGC includes culturally based and historically Black fraternities and sororities, including the Divine Nine (D9) organizations. Intake processes vary by chapter, so follow the chapters you’re interested in and go to their informational events.</p>',
+        l: [['OFSL: How to join', U.ofslJoin]] } },
+      { t: 'Recognized vs. unrecognized groups', u: U.ofslFamilies, m: 'Know the difference', n: 'Some off-campus groups aren’t recognized by Penn and aren’t part of its fraternity and sorority community.' }
+    ]},
+    { h: 'Cultural Resource Centers', tag: 'Open houses run in the first weeks of each semester', rows: [
+      { t: 'All six centers', u: U.crc, m: 'University Life', n: 'Community hubs for cultural celebration, academic engagement, and belonging. Several are in ARCH, 3601 Locust Walk.' },
+      { t: 'Greenfield Intercultural Center', u: U.gic, m: 'GIC', n: 'Intercultural understanding through activism, reflection, and dialogue.' },
+      { t: 'Makuu: The Black Cultural Center', u: U.makuu, m: 'Makuu', n: 'Support with an emphasis on students of African descent.' },
+      { t: 'La Casa Latina', u: U.casa, m: 'Center for Hispanic Excellence', n: 'Latino culture, issues, and identity at Penn.' },
+      { t: 'Pan-Asian American Community House', u: U.paach, m: 'PAACH', n: 'East, South, and Southeast Asian and Pacific Islander American students and groups.' },
+      { t: 'LGBT Center', u: U.lgbt, m: '25+ student groups', n: 'Peer mentorship, study and social space, and events.' },
+      { t: 'Penn Women’s Center', u: U.pwc, m: 'PWC' }
+    ]},
+    { h: 'Community, Service & Support', cls: 's3', cols: true, rows: [
+      { t: 'Civic House', u: U.civicHouse, m: 'Service hub', n: 'Penn’s center for community service and social justice, including paid internships.' },
+      { t: 'Netter Center', u: U.netter, m: 'West Philadelphia', n: 'University–community partnerships, including ABCS courses that build service into class.' },
+      { t: 'Penn First Plus', u: U.pennFirstPlus, m: 'First-gen / low-income', n: 'Community, mentoring, and practical support for first-generation and lower-income students.' },
+      { t: 'Wharton FGLI', u: U.whFgli, m: 'Wharton community', n: 'Wharton’s first-gen, low-income student community; works with Penn First Plus.' },
+      { t: 'International Student & Scholar Services', u: U.isss, m: 'ISSS', n: 'Visas, work authorization (including for internships), and support for international students.' },
+      { t: 'Office of the Chaplain', u: U.chaplain, m: 'Religious life', n: 'Religious and spiritual communities, plus confidential pastoral support.' },
+      { t: 'Office of Student Affairs', u: U.osa, m: 'Houston Hall', n: 'Student organization support and campus-wide programs.' },
+      { t: 'Penn Student Agencies', u: U.psa, m: 'Student-run businesses', n: 'Get paid to help run real student businesses on campus.' }
+    ]}
+  ]},
+
+{ id: 'global', nav: 'Abroad & Research', title: 'Global & Research', intro: 'Go abroad, get paid to do research, or both. Several of these are open in your first year, and their applications open months before the experience.',
+  cells: [
+    { h: 'Summer Research & Internships', cls: 'r2', tag: 'Most are open to first-years', rows: [
+      { t: 'GRIP', u: U.grip, p: ['fy', 'penn'], m: 'Abroad, 8–12 wks', n: 'Global Research & Internship Program', d: {
+        f: [['Open to', 'All non-graduating, full-time Penn undergraduates returning the next fall'], ['When', '8–12 weeks over the summer'], ['Funding', 'Guaranteed award for every accepted student; Highly Aided students get 100% of estimated cost'], ['Apply', '<b>Nov 4, 2026 – Jan 6, 2027 (noon ET)</b>, or earlier if a placement fills']],
+        b: `<p>GRIP is Penn’s main international internship and research program, spanning business, finance, technology, engineering, healthcare, sustainability, community development, and more. There are three kinds of placement:</p>
+            <ul><li><b>Direct internships</b> place you with a specific employer abroad. More independence; you may arrange your own housing.</li>
+            <li><b>Cohort internships</b> send a small group of Penn students to one destination, where local partners match students to employers and often help with housing, visas, and airport pickup.</li>
+            <li><b>Research placements</b> put you on a specific project under a faculty investigator at a university abroad.</li></ul>
+            <h3>Placements can close early</h3>
+            <p>Each placement caps applications (about 40 for cohort and research placements, 20 for direct placements), so popular ones can close well before January 6. Browse in the fall and apply early.</p>`,
+        l: [['Application process', U.gripApply]] } },
+      { t: 'PURM', u: U.purm, p: ['fy', 'penn'], m: 'At Penn, 10 wks', n: 'Penn Undergraduate Research Mentoring', d: {
+        f: [['Open to', 'All Penn first- and second-years (you can do it once)'], ['When', '10 weeks over the summer'], ['Apply', 'Around Feb 15, 2027 (tentative)']],
+        b: '<p>PURM matches students finishing their first or second year with Penn faculty research projects. Unlike SPUR or SIRE, you apply to existing faculty projects rather than writing a full proposal of your own. Projects span the whole university, so Wharton students can explore business research as well as economics, psychology, healthcare, engineering, science, social science, and the humanities.</p><p>If you have little or no research experience, this is one of the best ways in.</p>' } },
+      { t: 'SPUR', u: U.spur, p: ['fy', 'wh'], m: 'At Penn, ~10 wks', n: 'Summer Program for Undergraduate Research', d: {
+        f: [['Open to', 'Wharton undergraduates'], ['When', 'About 10 weeks over the summer, based at Penn'], ['Funding', 'Taxable award up to $6,000'], ['Apply', 'Around Mar 19, 2027 (tentative)']],
+        b: '<p>SPUR supports independent research under a faculty mentor, carried out mainly on Penn’s campus. Projects can be theoretical or applied, qualitative or quantitative, and end in a research paper that can be published through ScholarlyCommons. Students working with Wharton faculty get priority.</p><p><b>SPUR vs. SIRE:</b> SPUR can take on almost any business research question. SIRE requires the project to address both economic and social value.</p>' } },
+      { t: 'SIRE', u: U.sire, p: ['fy', 'wh'], m: 'U.S. or abroad', n: 'Social Impact Research Experience', d: {
+        f: [['Open to', 'Wharton undergraduates'], ['Topics', 'Social impact, policy, sustainability, healthcare, development, inequality, education'], ['Funding', 'Up to $6,000 for approved travel and lodging; up to ten awards'], ['Apply', 'Around Feb 12, 2027 (tentative)']],
+        b: '<p>SIRE funds Wharton undergraduates to design and run independent research that creates both economic and social value, in the U.S. or abroad, using quantitative or qualitative methods. You work with a faculty advisor for the equivalent of at least 20 hours a week for about two months. Projects end with a formal paper, publication on ScholarlyCommons, and a symposium presentation.</p><p><b>SIRE vs. WRAP:</b> SIRE is your own project. WRAP places you as a research assistant to a researcher at another institution.</p>' } },
+      { t: 'WRAP', u: U.wrap, p: ['fy', 'wh'], m: 'Abroad, 8–12 wks', n: 'World Research Assistantship Program', d: {
+        f: [['Open to', 'Wharton undergraduates in good standing; no research experience needed'], ['When', '8–12 weeks over the summer, at least 20 hours a week'], ['Funding', 'Taxable award up to $6,000 for travel and lodging'], ['Apply', '2027 deadline not yet posted; it usually falls in early spring']],
+        b: `<p>WRAP places Wharton undergraduates as research assistants at a university or think tank outside Penn, usually abroad, on business-related research under a research mentor. Afterward you submit a research summary and blog post and present at a symposium.</p>
+            <p>The unusual part: you don’t need to find an overseas professor yourself. You find a Wharton faculty advisor who helps develop the project and, if you’re selected, helps connect you with the right institution.</p>
+            <p><b>WRAP vs. GRIP:</b> GRIP gives you a set of existing placements to apply to. WRAP is student-designed and specifically about business research.</p>` } },
+      { t: 'Penn Global Research Institutes', u: U.pgri, p: ['penn'], m: 'Faculty-led, abroad', d: {
+        f: [['Open to', 'Varies by institute; often open to first-years'], ['Funding', 'Covers required summer research and travel costs']],
+        b: '<p>PGRI lets you do research abroad alongside Penn professors, local researchers, community members, and other Penn students. Projects take on major global challenges and pair research training on campus with fieldwork abroad. Current institutes cover global education, climate adaptation, community research, documentary work, and other interdisciplinary fields.</p>' } },
+      { t: 'Wharton Summer Internship Award', u: U.internshipAward, p: ['wh'], m: 'Up to $5,000', d: {
+        f: [['For', 'Unpaid or modestly paid internships of at least 8 weeks with a government agency, U.S. nonprofit, or Certified B Corp'], ['Funding', 'Up to $500 a week for up to 10 weeks ($5,000 max)'], ['Apply', 'Rolling, through Apr 27, 2027']],
+        b: '<p>Useful when you find a role you care about but couldn’t otherwise afford to take.</p>' } }
+    ]},
+    { h: 'Go Abroad: Short Programs', tag: 'About a week, during breaks or summer', rows: [
+      { t: 'Penn Global Seminars', u: U.pgs, p: ['fy', 'penn'], m: '$950 flat fee', d: {
+        f: [['Open to', 'Full-time Penn undergraduates in any school or year (some courses have prerequisites)'], ['Format', 'A regular 1 CU course plus about a week of travel during a break'], ['Cost', '$950 for 2026–27, covering airfare, lodging, in-country travel, entrance fees, and some meals. Financial aid applies.']],
+        b: '<p>Penn Global Seminars pair a semester in the classroom with short-term international travel led by Penn faculty. About 20 run in 2026–27. Destinations and topics change every year. Recent seminars covered business communication in the UK, sustainability in Latin America, traditional Chinese medicine in China, and global aging in Malawi, with others going to Japan, Italy, Brazil, and Korea.</p><p>One of the most accessible ways to travel with Penn, since the fee is flat and aid applies.</p>' } },
+      { t: 'W3i International Courses', u: U.w3i, p: ['fy'], m: 'WH 2980, 0.5 CU', d: {
+        f: [['Open to', 'Penn undergraduates in good standing (some courses limit class years); at most two W3i courses at Penn'], ['When', 'Roughly 7–9 days during breaks'], ['Spring 2027', 'Stockholm (May 23–29) abroad, plus domestic trips to Miami and San Francisco']],
+        b: '<p>W3i courses, formerly the Wharton International Program (WIP), are faculty-led business courses built around travel: company visits, lectures at partner universities, cultural activities, and conversations with executives and alumni. They focus on a region’s business environment, local business practices, and intercultural communication.</p><p>Recent destinations include Tokyo, Portugal, Colombia, and Stockholm. Applications for spring trips close in the fall, so check the page early each semester.</p>' } },
+      { t: 'Penn Summer Abroad', u: U.summerAbroad, p: ['penn'], m: '1–10 weeks', d: {
+        f: [['Open to', 'Varies by program'], ['2027 apps', 'Open Nov 1, 2026; early deadline Jan 31; final deadline Feb 15, 2027']],
+        b: '<p>Faculty-led and partner-university summer programs abroad, typically four to ten weeks. Wharton highlights Copenhagen Business School, the Chinese University of Hong Kong, and the Hong Kong University of Science and Technology. Penn-run programs include options in France, Spain, and Italy. Financial aid may be available depending on the program.</p>' } },
+      { t: 'Global Modular Courses', u: U.gmc, p: ['later'], m: 'Juniors and seniors', d: {
+        f: [['Open to', 'Wharton juniors and seniors (seniors can’t take May courses), plus MBA/EMBA students'], ['When', '3–7 days during breaks'], ['First-years', NOTYET]],
+        b: '<p>Intensive Wharton courses taught where the topic matters most, combining Wharton faculty, local universities, regional business leaders, and team projects. Around 17 run in 2026–27. Not open to you yet, but worth knowing about.</p>' } }
+    ]},
+    { h: 'A Semester Abroad', tag: 'Usually junior year; plan in year one', rows: [
+      { t: 'Wharton semester abroad', u: U.semesterAbroad, p: ['later'], m: 'Read this early', d: {
+        f: [['When', 'Fall or spring, most often junior year'], ['GPA', '3.0 cumulative, and 3.0 in each of the previous two semesters'], ['Credit', 'Business Breadth, Liberal Arts & Sciences, and unrestricted electives; generally not concentration or Business Fundamentals courses'], ['First-years', NOTYET]],
+        b: '<p>Wharton recommends planning about a year ahead. Sophomore spring is possible but comes with extra academic requirements. Because the courses you take in your first two years decide whether you’ll be eligible later, tell your academic advisor early if a semester abroad is on your mind.</p>',
+        l: [['Wharton-approved programs', U.approvedPrograms]] } },
+      { t: 'Wharton-approved programs', u: U.approvedPrograms, m: 'Where you can go' },
+      { t: 'Wharton Global Opportunities', u: U.whGlobal, m: 'Wharton overview', n: 'Wharton encourages at least one international experience before you graduate.' },
+      { t: 'Penn Abroad', u: U.pennAbroad, m: 'Penn’s hub', n: 'Semester programs, PGS, GRIP, PGRI, funding, and advising.' },
+      { t: 'Penn Abroad application portal', u: U.passport, m: 'Replaced PASSPORT', n: 'Where you browse and apply to most Penn Abroad programs.' },
+      { t: 'Penn Abroad advisors & drop-ins', u: U.abroadAdvisors, m: '15-min drop-ins', n: 'Not sure which program fits? Start here.' },
+      { t: 'Wharton Undergraduate Research', u: U.whResearch, m: 'WRAP, SIRE, SPUR', n: 'Research advising, assistantships, and research courses.' },
+      { t: 'CURF', u: U.curf, m: 'Penn-wide research', n: 'PURM, grants, fellowships, and the faculty research directory.' }
+    ]},
+    { h: 'Program Finder', cls: 's2', tag: 'Click a program for details', body: () => renderFinder() }
+  ]},
+
+{ id: 'careers', nav: 'Careers', title: 'Career Planning', intro: 'How recruiting actually works at Penn, and what’s worth doing in year one (hint: exploring counts).',
+  cells: [
+    { h: 'Career Services & Handshake', rows: [
+      { t: 'Penn Career Services', u: U.careers, m: 'One office for all', d: {
+        f: [['Where', '3935 Walnut Street, Suite 300 (weekdays 9–5)'], ['Phone', '<a href="tel:2158987531">215-898-7531</a>'], ['Email', '<a href="mailto:careerservices@vpul.upenn.edu">careerservices@vpul.upenn.edu</a>']],
+        b: `<p>There’s no separate Wharton undergraduate career office. Career Services is the career office for undergraduates in the College, Engineering, Nursing, and Wharton alike. Separate offices exist only for Wharton MBA/EMBA, Dental, Law, and Vet, and Wharton’s own site points undergraduates here.</p>
+            <h3>Three kinds of advising</h3>
+            <ul><li><b>Full appointments</b> with a career advisor, requested through Handshake.</li>
+            <li><b>Same-day drop-ins:</b> from 9:15 am ET on weekdays, availability appears in Handshake for a 15-minute virtual chat later that day.</li>
+            <li><b>Peer Career Advisors:</b> trained undergraduates who hold 15-minute “Pop-ins” (one per day), booked in Handshake.</li></ul>
+            <h3>Resume and cover letter reviews</h3>
+            <p>Submit a resume or cover letter for written feedback. Allow up to a week, or two at peak recruiting times. Wharton students are eligible.</p>`,
+        l: [['Undergraduate hub', U.careersStudent], ['Same-day drop-ins', U.csWalkins], ['Peer Career Advisors', U.csPeer], ['Resume & cover letter reviews', U.csCritique]] } },
+      { t: 'Handshake', u: U.handshake, m: 'System of record', n: 'Jobs, internships, employer events, advising appointments, and on-campus interview schedules. Filter Jobs by “interviewing on campus.”' },
+      { t: 'Four-year career timeline', u: U.csTimeline, m: 'Year by year', n: 'What to do in your first year, and what can wait.' },
+      { t: 'Resume templates & guide', u: U.csResume, m: 'Start here', n: 'Penn-formatted undergraduate templates. Also the <a href="' + U.csCover + '" target="_blank" rel="noopener">cover letter guide</a>.' },
+      { t: 'Industry communities', u: U.csCommunities, m: '20+ fields', n: 'Guides, jobs, and events by field, including an investment banking interview workshop and a finance technical mock-interview guide. Sign up for each field’s emails with your PennKey.' },
+      { t: 'Career Readiness @ Wharton (CR@W)', u: U.crw, p: ['wh'], m: 'Spring program', n: 'Four Friday sessions in February; the application opens in November.' }
+    ]},
+    { h: 'Recruiting 101', rows: [
+      { t: 'On-campus recruiting (OCR)', m: 'How it works', d: {
+        f: [['When', 'Fall and spring, for internships and full-time roles'], ['Where', 'In-person interviews at 3935 Walnut Street'], ['Scale', '250+ employers hold information sessions on campus each year']],
+        b: `<p>Employers interview on campus across financial services, consulting, technology, engineering, and more. The most common format is the <b>pre-select schedule</b>: the employer reviews applications and picks whom to interview. Info sessions often include recent Penn alumni, so they’re a good place to ask questions.</p>
+            <p>Mock interviews by job type and industry are available through Career Services.</p>` } },
+      { t: 'Recruiting timing', m: 'Earlier every year', d: {
+        b: `<p>Timing depends on the industry and keeps moving earlier. <b>Finance and consulting run far ahead of most other fields</b>, with some firms recruiting sophomores for internships more than a year out.</p>
+            <p>Rather than assuming one shared calendar, use the industry communities and the Outcomes data on Career Services’ site to see real hiring timelines for the field you care about.</p>
+            <h3>Offer deadlines</h3>
+            <p>Career Services encourages employers to give students two weeks to decide on offers. That’s a guideline, not a rule. If you get an exploding offer, talk to an advisor.</p>`,
+        l: [['Industry communities', U.csCommunities], ['Post-graduate outcomes', U.csOutcomes]] } },
+      { t: 'Where Wharton grads end up', u: U.csOutcomes, m: 'Outcomes data', d: {
+        f: [['Median salary', '$110,000 for the Wharton Class of 2025 (mean $111,819), per the Daily Pennsylvanian'], ['Penn-wide', 'Financial services was 34% and consulting 17% of known first jobs for the Class of 2025']],
+        b: '<p>Career Services publishes post-graduate outcomes reports by school, including industries, employers, cities, and salaries. They’re the most honest picture of where people actually go, and a good antidote to the idea that everyone ends up in banking or consulting.</p>',
+        l: [['Reports by school', 'https://careerservices.upenn.edu/post-graduate-outcomes/undergrad-reports-by-school/'], ['DP: Class of 2025 data', U.dpOutcomes]] } },
+      { t: 'Career fairs', u: U.csFairs, m: 'Spring 2027 dates TBA', n: 'The Spring Career & Internship Fair is usually in late January or early February. Spring 2027 also has a Summer Opportunities & Funding Fair.' },
+      { t: 'What should a first-year actually do?', m: 'Advice', d: {
+        b: `<ul><li>Explore: go to a few info sessions and club events in fields you’re curious about.</li>
+            <li>Build a one-page resume and get it reviewed at a drop-in.</li>
+            <li>Make a Handshake profile so employers and Career Services can reach you.</li>
+            <li>For the summer, any of these is a real option: research (PURM, SPUR, SIRE, WRAP), GRIP abroad, an internship, a job, or a break. Very few first-years land traditional finance or consulting internships, and that’s normal.</li>
+            <li>Talk to upperclassmen in clubs. That’s where most of the real recruiting knowledge lives.</li></ul>` } }
+    ]},
+    { h: 'Funding & Networking', rows: [
+      { t: 'Summer funding has been cut', m: 'What’s left', d: {
+        b: `<p>Career Services has sharply cut its summer funding. For summer 2026 it was limited to the Turner Schulman Human Rights Internship Award (College students only, up to $5,000); the executive director said no other funds were available for summer 2026.</p>
+            <h3>Still available</h3>
+            <ul><li><b>Highly Aided Summer Internship &amp; Research Funding</b> (through SRFS): up to $5,000 for unpaid or underpaid internships or research, for Highly Aided first-years through juniors. In 2026 it opened in early March with an April 14 priority deadline.</li>
+            <li><b>Wharton Summer Internship Award</b>: up to $5,000 for nonprofit, government, or B Corp internships.</li>
+            <li><b>CURF research grants</b> and <b>PURM</b>.</li>
+            <li><b>GRIP</b>: every accepted student gets a funding award.</li>
+            <li><b>Venture Lab StartUp Internship Award</b>, for internships at startups.</li>
+            <li><b>Civic House internships</b>.</li></ul>`,
+        l: [['Highly Aided summer funding', U.haFunding], ['All Penn funding sources', U.csFunding], ['Wharton Summer Internship Award', U.internshipAward], ['DP coverage', U.dpFunding]] } },
+      { t: 'Highly Aided summer funding', u: U.haFunding, m: 'Up to $5,000', n: 'For unpaid or underpaid summer work. Watch for the application in early March.' },
+      { t: 'MyPenn alumni directory', u: U.myPenn, m: 'Formerly QuakerNet', n: 'Search 400,000+ Penn alumni by company, industry, or city. Polite cold emails work better than you’d think.' },
+      { t: 'CareerShift', u: U.csCareerShift, m: 'Contact lists', n: 'Find and organize contacts at target employers. Can filter for H-1B, OPT, and EAD sponsors.' },
+      { t: 'Clubs are the Wharton pipeline', m: 'Treks, coffee chats', n: 'Treks, coffee chats, and firm workshops mostly happen through club programming.' }
+    ]},
+    { h: 'Entrepreneurship & Impact', cls: 's3', cols: true, tag: 'Building something, or want to work somewhere that is?', rows: [
+      { t: 'Venture Lab', u: U.ventureLab, p: ['penn'], m: 'Penn’s startup hub', n: 'Programs, mentors, and funding for student founders (formerly Penn Wharton Entrepreneurship).' },
+      { t: 'Tangen Hall', u: U.tangen, m: '40th & Sansom', n: 'Penn’s student entrepreneurship building. Open to any PennCard holder, weekdays 7 am–10 pm.' },
+      { t: 'Penn Wharton Innovation Fund', u: U.innovationFund, m: 'Startup funding', n: 'Any Penn student can lead an application. 2027 rounds: Jan 24 and Mar 14.' },
+      { t: 'Venture Initiation Program', u: U.vip, m: 'Accelerator', n: 'Workspace and support for early-stage student ventures.' },
+      { t: 'Bet on Entrepreneurship', u: U.betOn, p: ['fy'], m: 'FGLI first- and second-years', n: 'Entrepreneurship program for first-gen and lower-income students. Applications are in the fall (closed for 2026–27).' },
+      { t: 'StartUp Internship Award', u: U.startupAward, m: 'For startup interns', n: 'Funding once you’ve accepted a startup internship. The 2026 deadline was June 1.' },
+      { t: 'Civic House internships', u: U.civicCei, m: 'Paid', n: 'Community Engagement Internship: 10 hrs/week during the year or 35 hrs/week in summer; work-study students get priority.' },
+      { t: 'Netter Center summer program', u: U.netterStudents, m: 'Paid + housing', n: 'Penn Program for Public Service: 11 weeks in West Philadelphia, paid hourly, with housing.' }
+    ]}
+  ]},
+
+{ id: 'library', nav: 'Library', title: 'Library & Data', intro: 'Penn pays for tools that cost thousands a year outside it. Learn a few now and every class project, club pitch, and research job gets easier.',
+  cells: [
+    { h: 'Financial Data', rows: [
+      { t: 'Bloomberg Terminal', u: U.yablon, m: 'Yablon Lab, Lippincott', n: 'Market data, company financials, estimates, economic data, and news on the terminals in Lippincott’s Yablon Financial Resources Lab.' },
+      { t: 'S&P Capital IQ', u: U.capiq, m: 'Company research', n: 'Public and private company profiles, financials, transactions, ownership, and comps.' },
+      { t: 'PitchBook', u: U.pitchbook, m: 'VC and PE', n: 'Startups, funding rounds, investors, funds, and private-company valuations.' },
+      { t: 'LSEG Workspace', u: U.lseg, m: 'Formerly Refinitiv', n: 'Markets data, analyst research, estimates, ownership, and global securities.' },
+      { t: 'WRDS', u: U.wrds, m: 'Wharton research data', n: 'Wharton’s own platform for large financial, accounting, and economic datasets. Essential for research assistants.' }
+    ]},
+    { h: 'Industry & Market Research', rows: [
+      { t: 'IBISWorld', u: U.findLib, m: 'Industry reports', n: 'Market size, competitors, cost structures, and outlook. Great for consulting cases.' },
+      { t: 'Statista', u: U.statista, m: 'Quick stats', n: 'The fastest route to a market-size figure or ready-made chart.' },
+      { t: 'Euromonitor Passport', u: U.findLib, m: 'Consumer markets', n: 'Retail, food, apparel, beauty, and travel across countries.' },
+      { t: 'Mintel', u: U.findLib, m: 'Consumer behavior', n: 'Attitudes, brands, and demographics; strongest for marketing projects.' },
+      { t: 'EMIS', u: U.findLib, m: 'Emerging markets', n: 'Company, industry, and economic data for international markets.' }
+    ], foot: `<p class="note" style="margin:8px 0 0">No direct link? Search the name at <a href="${U.findLib}" target="_blank" rel="noopener">find.library.upenn.edu</a>.</p>` },
+    { h: 'Free News Subscriptions', tag: 'Free with your PennKey; most students never activate them', rows: [
+      { t: 'Activate your subscriptions', u: U.news, m: 'Start here', n: 'One page with sign-up links for every outlet below.' },
+      { t: 'Wall Street Journal', u: U.news, m: 'Business and markets' },
+      { t: 'Financial Times', u: U.news, m: 'Global business' },
+      { t: 'Bloomberg.com', u: U.news, m: 'Separate from the Terminal' },
+      { t: 'The New York Times', u: U.news, m: 'News and culture' },
+      { t: 'Factiva and Nexis Uni', u: U.findLib, m: 'Searchable archives', n: 'Decades of newspapers and trade publications; great for company history.' }
+    ]},
+    { h: 'Academic Research & Citations', cls: 's2', cols: true, rows: [
+      { t: 'Google Scholar', u: 'https://scholar.google.com/', m: 'Paper search', n: 'Opens paywalled articles through Penn Libraries when you’re signed in.' },
+      { t: 'ABI/INFORM Global', u: U.abi, m: 'Business journals', n: 'Academic journals, trade publications, and dissertations.' },
+      { t: 'Business Source Complete', u: U.findLib, m: 'Full text', n: 'Management, finance, marketing, economics, and accounting.' },
+      { t: 'JSTOR', u: 'https://www.jstor.org/', m: 'Humanities and social science', n: 'Sign in through Penn for full access.' },
+      { t: 'Web of Science', u: U.findLib, m: 'Citation tracking', n: 'Find the most influential papers and researchers in a field.' },
+      { t: 'PubMed', u: 'https://pubmed.ncbi.nlm.nih.gov/', m: 'Health and life sciences', n: 'Useful for healthcare and biotech projects.' },
+      { t: 'Zotero', u: U.zotero, m: 'Free, unlimited storage', n: 'Save sources, organize PDFs, and generate citations.' },
+      { t: 'Citation help', u: U.citations, m: 'Workshops', n: 'Support for Zotero, EndNote, Mendeley, and others.' }
+    ]},
+    { h: 'Get Research Help', rows: [
+      { t: 'Ask a question (library chat)', u: U.askLib, m: 'Weekdays 9–5', n: 'Live chat or email with a librarian for any research question.' },
+      { t: 'Ask a Lippincott librarian', u: U.lippincott, m: 'Business research', n: 'Market sizing, private-company info, and “which database has this?” are exactly what they’re there for. Ask before you spend three hours searching.' },
+      { t: 'Lippincott research guides', u: U.lippGuide, m: 'By topic' },
+      { t: 'Research Data & Digital Scholarship', u: U.rdds, m: 'Python, R, GIS', n: 'Help with data analysis, visualization, mapping, and text mining.' },
+      { t: 'Database finder', u: U.findLib, m: 'Everything', n: 'Start here when you know what you need but not where it lives.' },
+      { t: 'Library hours', u: U.libHours, m: 'Van Pelt, Lippincott, more' }
+    ]}
+  ]},
+
+{ id: 'apps', nav: 'Apps', title: 'Apps & Accounts', intro: 'Set up the first column before anything else. Almost everything at Penn sits behind your PennKey.',
+  cells: [
+    { h: 'Set Up First', rows: [
+      { t: 'PennKey', u: U.pennkey, m: 'Your universal login', n: 'Email, Canvas, Path@Penn, WiFi, and more. Turn on two-step verification.' },
+      { t: 'PennCard', u: U.penncard, m: 'Your ID', n: 'Building, library, and gym access, plus PennCash.' },
+      { t: 'Path@Penn', u: U.path, m: 'Registration and records', n: 'Classes, financial aid, billing, records, and privacy settings.' },
+      { t: 'Campus Express', u: U.campusExpress, m: 'One-stop shop', n: 'PennCard photo, dining plan, discounted transit pass, and property registration.' },
+      { t: 'Canvas', u: U.canvas, m: 'Course sites', n: 'Readings, assignments, announcements, and grades.' }
+    ]},
+    { h: 'On Your Phone', rows: [
+      { t: 'Penn Mobile', u: U.pennMobileIos, p: ['app'], m: `<a href="${U.pennMobileIos}" target="_blank" rel="noopener">iOS</a> · <a href="${U.pennMobileAndroid}" target="_blank" rel="noopener">Android</a>`, n: 'Study rooms, laundry, dining hours and menus, and campus news. Built by Penn Labs, a student group.' },
+      { t: 'MyWharton', u: U.mywhartonAndroid, p: ['app'], m: 'Search “MyWharton” on iOS', n: 'Calendar, announcements, advisor info, and groups.' },
+      { t: 'Penn Dining mobile ordering', u: U.mobileOrdering, p: ['app'], m: 'Order ahead', n: 'Pay with Dining Dollars. Search “Transact Mobile Ordering” in your app store.' },
+      { t: 'Penn Transit Mobile', u: U.transit, p: ['app'], m: 'Live bus tracking', n: 'Track shuttles and request the free evening safety ride.' },
+      { t: 'Penn Guardian', u: U.guardian, p: ['app'], m: 'Safety app', n: 'Connects you to Penn Police with your location.' }
+    ]},
+    { h: 'Wharton Tech', rows: [
+      { t: 'MyWharton (web)', u: U.mywharton, m: 'Wharton portal', n: 'Dashboard, events calendar, student directory, and Wharton resource links. <a href="' + U.mywhartonGuide + '" target="_blank" rel="noopener">Guide for undergrads</a>' },
+      { t: 'Attendance, absence & video requests', u: U.whartonApps, m: 'In Canvas', n: 'Request excused absences and class recordings for specific dates.' },
+      { t: 'Virtual Lab (VLab)', u: U.whartonization, m: '24/7 remote', n: 'Remote computers with Wharton lab software preinstalled.' },
+      { t: 'Canvas tools', u: U.canvasTools, m: 'NameCoach, Ed, Respondus', n: 'Record your name’s pronunciation in NameCoach; Ed Discussion is the class Q&A board; some exams need Respondus LockDown Browser.' },
+      { t: 'Whartonization guide', u: U.whartonization, m: 'Get your laptop set up', n: 'Wharton accounts, WiFi, printing, and software in one checklist.' }
+    ]},
+    { h: 'IT & Productivity', cls: 's3', cols: true, rows: [
+      { t: 'PennO365', u: U.o365, p: ['free'], m: 'Microsoft 365', n: 'Word, Excel, PowerPoint, Teams, Outlook, and OneNote, free with PennKey.' },
+      { t: 'Penn+Box', u: U.box, p: ['free'], m: 'Cloud storage', n: 'Secure storage for keeping and sharing files.' },
+      { t: 'AirPennNet', u: U.airpennnet, m: 'Campus WiFi', n: 'Setup help for laptops and phones.' },
+      { t: 'Printing (PaperCut)', u: U.printing, m: 'Tap your PennCard', n: 'Print from a laptop or phone and release at any Penn or Wharton printer.' },
+      { t: 'Zoom @ Penn', u: U.zoom, m: 'Video calls', n: 'Sign in with PennKey for classes and office hours.' },
+      { t: 'Tech Center', u: U.techCenter, m: 'In Van Pelt', n: 'Student tech help desk: 215-898-9720.' }
+    ]}
+  ]},
+
+{ id: 'wellness', nav: 'Health & Safety', title: 'Health, Safety & Wellness', intro: 'Free, confidential, and there for small problems too, not just emergencies. In an emergency, call Penn Police at 215-573-3333 or 911.',
+  cells: [
+    { h: 'Mental Health', rows: [
+      { t: 'Counseling (formerly CAPS)', u: U.counseling, m: '215-898-7021, 24/7', n: 'Free short-term therapy, groups, workshops, and crisis support. 3624 Market St.' },
+      { t: 'Wharton-based counselor', u: U.whWellness, p: ['wh'], m: 'Press 2 at 215-898-7021', n: 'Counselors embedded with Wharton undergraduates.' },
+      { t: 'Wellness at Penn', u: U.wellness, m: '215-746-WELL, 24/7', n: 'One front door for counseling, medical care, and wellbeing.' },
+      { t: 'Peer support', u: U.peerSupport, m: 'Students helping students', n: 'Talk to a trained peer about stress, adjustment, or anything else.' },
+      { t: 'Student Intervention Services', u: U.sis, m: 'Crisis support', n: 'Case management when something big happens, like a family emergency, hospitalization, or loss.' },
+      { t: 'Penn HELP Line', u: U.helpLine, m: '215-898-HELP, 24/7', n: 'Not sure where to go? They’ll point you to the right place.' }
+    ]},
+    { h: 'Physical Health', rows: [
+      { t: 'Student Health (medical care)', u: U.medical, m: '215-746-3535', n: 'Primary care, sick visits, sexual health, and travel medicine. 3535 Market St, Suite 100.' },
+      { t: 'Public Health & Wellbeing', u: U.publicHealth, m: 'Prevention', n: 'Immunizations, insurance requirements, and health education.' },
+      { t: 'Penn Recreation', u: U.rec, m: 'Pottruck and more', n: 'Gyms, pool, climbing wall, intramurals, club sports, and outdoor trips. Free with your PennCard.' },
+      { t: 'SUPER program', u: U.super, m: 'Substance use', n: 'Prevention, education, and recovery support, without judgment.' },
+      { t: 'Medical amnesty', u: U.amnesty, m: 'Call for help', n: 'Penn’s policy is designed so you can call for help for a friend (or yourself) without fear of discipline.' }
+    ]},
+    { h: 'Staying Safe', rows: [
+      { t: 'Penn Police / Public Safety', u: U.publicSafety, m: '215-573-3333', n: 'Emergencies on or near campus. From a campus phone, dial 511.' },
+      { t: 'Walking Escort', u: U.escort, m: '215-898-WALK, 24/7', n: 'A free security officer walks you home, 30th to 43rd St, Market St to Baltimore Ave.' },
+      { t: 'Evening safety shuttle', u: U.shuttle, m: 'Free, nightly', n: 'Request a ride in Penn Transit Mobile (“On Demand”) in the evening and overnight.' },
+      { t: 'Penn Guardian', u: U.guardian, p: ['app'], m: 'Safety app', n: 'Share your location with Penn Police and friends.' },
+      { t: 'UPennAlert', u: U.upennAlert, m: 'Emergency alerts', n: 'Make sure your cell number is current in Path@Penn so you get alerts.' },
+      { t: 'Special Services', u: U.specialServices, m: '215-898-6600, 24/7', n: 'Confidential support for victims of crime.' },
+      { t: 'Penn Violence Prevention', u: U.pvp, m: 'Sexual and relationship violence', n: 'Education, support, and resources around sexual and relationship violence and stalking.' }
+    ]}
+  ]},
+
+{ id: 'living', nav: 'Money & Living', title: 'Money & Daily Life', intro: 'Financial aid, food, housing, and getting around Philly.',
+  cells: [
+    { h: 'Money', rows: [
+      { t: 'Financial aid (SRFS)', u: U.srfs, m: '215-898-1988', n: 'Student Registration & Financial Services handles aid, billing, and registration. Franklin Building, 3451 Walnut St.' },
+      { t: 'Billing and payment', u: U.billing, m: 'Penn.Pay', n: 'Your term bill, payment plans, and refunds.' },
+      { t: 'Emergency & opportunity funding', u: U.emergencyFunds, m: 'Through SIS', n: 'Help with unexpected costs, and with opportunities you couldn’t otherwise afford.' },
+      { t: 'Student jobs', u: U.studentJobs, m: 'Work-study and more', n: 'Campus jobs are posted in Workday. Off-campus and internship roles are in Handshake.' },
+      { t: 'Penn First Plus', u: U.pennFirstPlus, m: 'First-gen / low-income', n: 'Community, mentoring, and help with hidden costs.' },
+      { t: 'Borrow textbooks', u: U.textbooks, m: 'Penn Libraries', n: 'Check whether the library has your course texts before you buy.' }
+    ]},
+    { h: 'Food & Housing', rows: [
+      { t: 'Your College House', u: U.collegeHouses, m: 'RAs and GAs', n: 'Your first stop for roommate, hall, or house questions.' },
+      { t: 'Residential Services', u: U.resServices, m: 'Maintenance, mail', n: 'Repairs, packages, keys, and housing logistics.' },
+      { t: 'First-year dining plans', u: U.diningPlans, m: 'Swipes and Dining Dollars', n: 'How your plan works and what it covers.' },
+      { t: 'Dining locations, hours & menus', u: U.diningHours, m: 'Updated daily' },
+      { t: 'Food resources guide', u: U.foodGuide, m: 'If money is tight', n: 'Penn Farm free produce, Swipe Out Hunger, and other options. SIS can also help.' },
+      { t: 'PennCash', u: U.penncash, m: 'Campus debit', n: 'Load money on your PennCard for laundry, printing, and campus shops.' }
+    ]},
+    { h: 'Getting Around & Errands', rows: [
+      { t: 'Penn Transit', u: U.transit, m: 'Free buses and shuttles', n: 'Campus loops and the evening safety shuttle, free with your PennCard.' },
+      { t: 'SEPTA discount (PennPass)', u: U.campusExpress, m: 'Through Campus Express', n: 'Discounted semester pass for Philly buses, trolleys, and trains.' },
+      { t: 'Penn Bookstore', u: U.bookstore, m: '3601 Walnut St', n: 'Textbooks, supplies, and Penn gear. The PennCard Center is on the 2nd floor.' },
+      { t: 'Tech Center', u: U.techCenter, m: 'Van Pelt Library', n: 'Laptop repair, software, and account help.' },
+      { t: 'Library hours', u: U.libHours, m: 'Some open late', n: 'Van Pelt, Lippincott, and the other libraries.' }
+    ]}
+  ]},
+
+{ id: 'decoder', nav: 'Penn-Speak', title: 'Penn-Speak Decoder', intro: 'Acronyms and nicknames you’ll hear in your first week.',
+  board: 'b2', cells: [ { h: 'Glossary', cls: 's2', body: () => renderGlossary() } ] }
+];
+
+/* Program Finder: [I want to…, program title (must match a row title above)] */
+const FINDER = [
+  ['Travel abroad during my first year', 'Penn Global Seminars', 'W3i International Courses'],
+  ['Work abroad the summer after first year', 'GRIP'],
+  ['Try research for the first time', 'PURM'],
+  ['Do my own business research at Penn', 'SPUR'],
+  ['Research a social-impact question, in the U.S. or abroad', 'SIRE'],
+  ['Be a research assistant abroad', 'WRAP'],
+  ['Do faculty-led field research abroad', 'Penn Global Research Institutes'],
+  ['Take classes abroad over the summer', 'Penn Summer Abroad'],
+  ['Get funding for an unpaid nonprofit internship', 'Wharton Summer Internship Award'],
+  ['Spend a whole semester abroad (later)', 'Wharton semester abroad'],
+  ['Take an intensive Wharton course abroad (later)', 'Global Modular Courses']
+];
+
+const GLOSSARY = [
+  ['PennKey', 'Your Penn username and password, used for almost everything.'],
+  ['PennCard', 'Your Penn ID. Opens doors, holds PennCash, gets you into the gym and libraries.'],
+  ['CU', 'Course unit. Most classes are 1.0 CU; W3i courses are 0.5.'],
+  ['Path@Penn', 'The official system for registration, records, and billing.'],
+  ['Advance registration', 'When you request next semester’s classes, partway through each term.'],
+  ['Drop / withdraw', 'Dropping leaves no record; withdrawing later in the term leaves a W on your transcript.'],
+  ['P/F', 'Pass/fail grade type. There’s a deadline each term to switch.'],
+  ['Concentration', 'Wharton’s version of a major, like Finance or Marketing.'],
+  ['JMHH', 'Jon M. Huntsman Hall, Wharton’s main building on Walnut St.'],
+  ['SHDH', 'Steinberg Hall-Dietrich Hall, the older Wharton building on Locust Walk.'],
+  ['ARB', 'Academic Research Building, Wharton’s faculty building; peer advisors are in Suite 1400.'],
+  ['Van Pelt / VP', 'Van Pelt-Dietrich Library Center, the main library. Lippincott is inside.'],
+  ['Lippincott', 'Wharton’s business library, home of the Bloomberg terminals.'],
+  ['Locust Walk', 'The main pedestrian path through campus.'],
+  ['The Quad', 'The Quadrangle, a first-year College House.'],
+  ['ARCH', '3601 Locust Walk, home to several Cultural Resource Centers.'],
+  ['Houston Hall', 'The student union, on Spruce St near Locust Walk.'],
+  ['Pottruck', 'Penn’s main gym, on Walnut St.'],
+  ['RA / GA', 'Residential Advisor (an undergraduate) and Graduate Associate in your College House.'],
+  ['OCR / OCI', 'On-campus recruiting / interviews, run through Handshake.'],
+  ['CURF', 'Center for Undergraduate Research & Fellowships.'],
+  ['SRFS', 'Student Registration & Financial Services: aid, billing, registration.'],
+  ['FGLI', 'First-generation, low-income.'],
+  ['SAC', 'Student Activities Council, which funds most non-Wharton clubs.'],
+  ['UA', 'Undergraduate Assembly, Penn’s student government.'],
+  ['CRC', 'Cultural Resource Centers: GIC, Makuu, La Casa Latina, PAACH, the LGBT Center, and the Penn Women’s Center.'],
+  ['Penn Labs', 'The student group behind Penn Mobile, Course Plan, and Course Alert.'],
+  ['Dining Dollars', 'Money on your dining plan for cafés and mobile ordering.'],
+  ['Spring Fling', 'Penn’s big end-of-year spring festival.'],
+  ['Quakers', 'Penn’s athletics teams and unofficial nickname for students.']
+];
+
+/* =====================================================================
+   RENDERING (no need to edit below this line)
+   ===================================================================== */
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const plain = h => String(h || '').replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+const ext = u => /^https?:/.test(u) ? ' target="_blank" rel="noopener"' : '';
+const slug = s => plain(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const PILLS = { wh: 'Wharton only', penn: 'All of Penn', fy: 'First-years can apply', later: 'Plan for later', app: 'App', free: 'Free',
+                apply: 'Apply', academic: 'Academic', break: 'Break', career: 'Career', life: 'Campus life' };
+const pill = k => PILLS[k] ? `<span class="pill pill-${k}">${PILLS[k]}</span>` : '';
+
+const today = new Date(); today.setHours(0, 0, 0, 0);
+const day = s => new Date(s + 'T00:00:00');
+const fmt = d => d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+const until = d => Math.round((d - today) / 864e5);
+const relText = n => n === 0 ? 'Today' : n === 1 ? 'Tomorrow' : n < 14 ? `In ${n} days` : n < 70 ? `In ${Math.round(n / 7)} weeks` : '';
+
+/* ---- details registry: every row with `d` gets an index + a shareable #slug ---- */
+const DETAILS = [];
+SECTIONS.forEach(s => s.cells.forEach(c => (c.rows || []).forEach(r => {
+  if (r.d) r._d = DETAILS.push({ r, sect: s.title, cell: c.h, slug: slug(r.t) }) - 1;
+})));
+
+function rowHtml(r, where) {
+  const pills = (r.p || []).map(pill).join('');
+  const note = r.n ? `<span class="rn">${r.n}</span>` : '';
+  const whereTxt = where ? `<span class="res-meta">${where}</span>` : '';
+  if (r.d) {
+    return `<div class="row more" role="button" tabindex="0" aria-haspopup="dialog" data-d="${r._d}">
+      <span class="rmain">${whereTxt}<span class="rt">${r.t}</span> ${pills}${note}</span><span class="meta">${r.m || 'Details'}</span></div>`;
   }
-  view.innerHTML =
-    '<h1 class="page-title" style="text-align:center">Course Modules</h1><div class="rule"></div>' +
-    '<table class="tilegrid"><tbody>' + rows + '</tbody></table>' +
-    '<p style="margin:26px 0 0;color:var(--ink-soft);font-size:14px;text-align:center">' +
-    'Penn policies, deadlines, and funding change year to year. Confirm dates on the office\'s own page before acting on them.</p>';
-  view.querySelectorAll('.tile').forEach(t => t.onclick = () => location.hash = '#/m/' + t.dataset.mod);
+  const title = r.u ? `<a class="rt" href="${r.u}"${ext(r.u)}>${r.t}</a>` : `<span class="rt">${r.t}</span>`;
+  return `<div class="row"><span class="rmain">${whereTxt}${title} ${pills}${note}</span>${r.m ? `<span class="meta">${r.m}</span>` : ''}</div>`;
 }
 
-function renderModule(id){
-  const m = findMod(id);
-  if (!m) return renderHome();
-  setNav('#/modules');
-  setCrumbs([{label:'First-Year Hub', hash:'#/home'}, {label:'Modules', hash:'#/modules'}, {label:strip(m.title)}]);
-  const rows = m.items.map(it => {
-    const k = key(m.id, it.id), isDone = done.has(k);
-    return '<li><div class="itemrow">' +
-      '<span class="ico" aria-hidden="true">&#9776;</span>' +
-      '<a data-page="' + it.id + '" tabindex="0">' + it.title + '</a>' +
-      '<button class="check" data-k="' + k + '" aria-pressed="' + isDone + '" ' +
-      'aria-label="Mark ' + esc(it.title) + ' as done">&#10003;</button>' +
-    '</div></li>';
+function renderDates(showAll) {
+  const live = DATES.filter(x => day(x.end || x.date) >= today)
+    .map(x => {
+      const start = day(x.date), end = x.end ? day(x.end) : null;
+      const started = start <= today;
+      let label, n;
+      if (x.window) { label = started ? 'Closes ' + fmt(end) : 'Opens ' + fmt(start); n = until(started ? end : start); }
+      else if (end) { label = started ? 'Through ' + fmt(end) : fmt(start) + ' – ' + fmt(end); n = until(started ? end : start); }
+      else { label = fmt(start); n = until(start); }
+      return { x, label, n, sortKey: started && end ? end : start };
+    })
+    .sort((a, b) => a.sortKey - b.sortKey);
+  if (!live.length) return '<p class="note" style="margin:0">Nothing on the calendar right now.</p>';
+  const LIMIT = 7;
+  const shown = showAll ? live : live.slice(0, LIMIT);
+  const html = shown.map(({ x, label, n }) => {
+    const rel = relText(n);
+    const title = x.u ? `<a href="${x.u}"${ext(x.u)}>${x.t}</a>` : x.t;
+    return `<div class="due-item"><div class="due-top"><span class="due-title">${pill(x.tag)}${title}</span>
+      <span class="due-date">${label}${x.tbd ? ' <span style="font-weight:400;color:#777">(tentative)</span>' : ''}${rel ? `<span class="due-rel${n <= 7 ? ' soon' : ''}">${rel}</span>` : ''}</span></div>
+      ${x.n ? `<div class="due-note">${x.n}</div>` : ''}</div>`;
   }).join('');
-  view.innerHTML =
-    '<h1 class="page-title">' + m.title + '</h1>' +
-    '<div class="modhead"><h2>' + m.title + '</h2>' +
-      '<span class="pill">' + modDone(m) + ' of ' + m.items.length + ' done</span></div>' +
-    '<ul class="itemlist">' + rows + '</ul>';
-  wireChecks(() => renderModule(id));
-  view.querySelectorAll('[data-page]').forEach(a => {
-    a.onclick = () => location.hash = '#/m/' + m.id + '/' + a.dataset.page;
-    a.onkeydown = e => { if (e.key === 'Enter') a.onclick(); };
-  });
+  const more = live.length > LIMIT
+    ? `<button class="linkbtn" type="button" data-dates="${showAll ? 'less' : 'all'}">${showAll ? 'Show fewer' : `Show all ${live.length} dates`}</button>` : '';
+  return `<div id="dates">${html}${more}</div>`;
 }
 
-function renderPage(modId, pageId){
-  const m = findMod(modId);
-  if (!m) return renderHome();
-  const idx = m.items.findIndex(i => i.id === pageId);
-  if (idx < 0) return renderModule(modId);
-  const it = m.items[idx], k = key(m.id, it.id), isDone = done.has(k);
-  const prev = m.items[idx - 1], next = m.items[idx + 1];
-  setNav('#/modules');
-  setCrumbs([{label:'First-Year Hub', hash:'#/home'}, {label:strip(m.title), hash:'#/m/' + m.id}, {label:it.title}]);
-  view.innerHTML =
-    '<h1 class="page-title">' + it.title + '</h1>' +
-    '<div class="page">' + it.html + '</div>' +
-    '<div class="pagefoot">' +
-      '<div>' + (prev ? '<button data-h="#/m/' + m.id + '/' + prev.id + '">&#8592; ' + prev.title + '</button>' : '') + '</div>' +
-      '<button class="done check-page" data-k="' + k + '" aria-pressed="' + isDone + '">' +
-        (isDone ? '&#10003; Done' : 'Mark as done') + '</button>' +
-      '<div>' + (next ? '<button data-h="#/m/' + m.id + '/' + next.id + '">' + next.title + ' &#8594;</button>' : '') + '</div>' +
-    '</div>';
-  view.querySelectorAll('.pagefoot [data-h]').forEach(b => b.onclick = () => location.hash = b.dataset.h);
-  wireChecks(() => renderPage(modId, pageId));
-  window.scrollTo(0, 0);
+function renderHelp() {
+  return `<div class="emergency">Emergency? Penn Police <a href="tel:2155733333">215-573-3333</a> or <a href="tel:911">911</a></div>` +
+    HELP.map(h => `<div class="help-row"><span><b>${h.u ? `<a href="${h.u}"${ext(h.u)} style="color:inherit">${h.t}</a>` : h.t}</b><span class="rn">${h.n}</span></span>
+      <a class="tel" href="tel:${h.tel.replace(/\D/g, '')}">${h.tel}</a></div>`).join('');
 }
 
-function wireChecks(rerender){
-  view.querySelectorAll('[data-k]').forEach(b => {
-    b.onclick = () => {
-      const k = b.dataset.k;
-      done.has(k) ? done.delete(k) : done.add(k);
-      saveDone();
-      rerender();
-    };
-  });
+const CHK_KEY = 'fyhub-checklist-v1';
+let checked = new Set();
+try { checked = new Set(JSON.parse(localStorage.getItem(CHK_KEY) || '[]')); } catch (e) {}
+function renderChecklist() {
+  const n = CHECKLIST.filter(c => checked.has(c.id)).length;
+  return `<div class="cell-tag" style="margin:-12px -16px 8px">${n} of ${CHECKLIST.length} done · saved in this browser
+      <div class="progress" aria-hidden="true"><i style="width:${(n / CHECKLIST.length * 100).toFixed(0)}%"></i></div></div>` +
+    CHECKLIST.map(c => `<div class="chk${checked.has(c.id) ? ' done' : ''}"><input type="checkbox" id="chk-${c.id}" data-chk="${c.id}"${checked.has(c.id) ? ' checked' : ''} />
+      <div><label for="chk-${c.id}">${c.t}</label>${c.n ? `<span class="rn">${c.n}</span>` : ''}</div></div>`).join('');
 }
 
-function renderModuleList(){
-  setNav('#/modules');
-  setCrumbs([{label:'First-Year Hub', hash:'#/home'}, {label:'Modules'}]);
-  view.innerHTML = '<h1 class="page-title">Modules</h1>' + MODULES.map(m =>
-    '<div class="modhead"><h2>' + m.title + '</h2><span class="pill">' +
-      modDone(m) + ' of ' + m.items.length + ' done</span></div>' +
-    '<ul class="itemlist">' + m.items.map(it =>
-      '<li><div class="itemrow"><span class="ico" aria-hidden="true">&#9776;</span>' +
-      '<a data-h="#/m/' + m.id + '/' + it.id + '" tabindex="0">' + it.title + '</a>' +
-      '<button class="check" data-k="' + key(m.id, it.id) + '" aria-pressed="' +
-      done.has(key(m.id, it.id)) + '" aria-label="Mark ' + esc(it.title) + ' as done">&#10003;</button></div></li>'
-    ).join('') + '</ul>').join('');
-  view.querySelectorAll('[data-h]').forEach(a => {
-    a.onclick = () => location.hash = a.dataset.h;
-    a.onkeydown = e => { if (e.key === 'Enter') a.onclick(); };
-  });
-  wireChecks(renderModuleList);
+function renderFinder() {
+  const btn = t => { const i = DETAILS.findIndex(x => plain(x.r.t) === t); return i < 0 ? t : `<button type="button" data-d="${i}">${t}</button>`; };
+  return `<table class="data"><thead><tr><th>If you want to…</th><th>Look at</th></tr></thead><tbody>` +
+    FINDER.map(([want, ...progs]) => `<tr><td>${want}</td><td>${progs.map(btn).join(' or ')}</td></tr>`).join('') + '</tbody></table>';
 }
 
-function renderAllPages(){
-  setNav('#/pages');
-  setCrumbs([{label:'First-Year Hub', hash:'#/home'}, {label:'All pages'}]);
-  const rows = MODULES.flatMap(m => m.items.map(it =>
-    '<li><button data-h="#/m/' + m.id + '/' + it.id + '">' + it.title + '</button>' +
-    '<small>' + strip(m.title) + '</small></li>')).join('');
-  view.innerHTML = '<h1 class="page-title">All pages</h1><ul class="indexlist">' + rows + '</ul>';
-  view.querySelectorAll('[data-h]').forEach(b => b.onclick = () => location.hash = b.dataset.h);
+function renderGlossary() {
+  return `<dl class="gloss">${GLOSSARY.map(([t, d]) => `<div><dt>${t}</dt><dd>${d}</dd></div>`).join('')}</dl>`;
 }
 
-function renderSearch(term){
-  setNav('#/pages');
-  setCrumbs([{label:'First-Year Hub', hash:'#/home'}, {label:'Search'}]);
-  const q = term.toLowerCase();
-  const hits = [];
-  if (q) MODULES.forEach(m => m.items.forEach(it => {
-    const text = strip(it.html), hay = (it.title + ' ' + text).toLowerCase();
-    const at = hay.indexOf(q);
-    if (at > -1){
-      const pos = text.toLowerCase().indexOf(q);
-      const snip = pos > -1
-        ? '…' + esc(text.slice(Math.max(0, pos - 70), pos + 110)) + '…'
-        : esc(text.slice(0, 140)) + '…';
-      hits.push('<li><button data-h="#/m/' + m.id + '/' + it.id + '">' + it.title + '</button>' +
-        '<small>' + strip(m.title) + '</small><small style="margin-top:4px;color:var(--ink)">' +
-        snip.replace(new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'ig'), s => '<mark>' + s + '</mark>') +
-        '</small></li>');
-    }
-  }));
-  view.innerHTML = '<h1 class="page-title">Search: ' + esc(term) + '</h1>' +
-    (hits.length ? '<ul class="indexlist">' + hits.join('') + '</ul>'
-                 : '<div class="empty">No pages match that. Try a program name like GRIP, WRAP, Handshake, or Weingarten.</div>');
-  view.querySelectorAll('[data-h]').forEach(b => b.onclick = () => location.hash = b.dataset.h);
+function cellHtml(c) {
+  const head = `<div class="cell-head${c.red ? ' red' : ''}">${c.h}</div>${c.tag ? `<div class="cell-tag">${c.tag}</div>` : ''}`;
+  const inner = c.body ? c.body() : (c.rows || []).map(r => rowHtml(r)).join('');
+  const style = c.cols ? ' style="columns: 2 320px; column-gap: 32px;"' : '';
+  return `<section class="cell ${c.cls || ''}">${head}<div class="cell-body"${style}>${inner}${c.foot || ''}</div></section>`;
 }
 
-function route(){
-  const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
-  if (!parts.length || parts[0] === 'home') return renderHome();
-  if (parts[0] === 'modules') return renderModuleList();
-  if (parts[0] === 'pages') return renderAllPages();
-  if (parts[0] === 'search') return renderSearch(decodeURIComponent(parts[1] || ''));
-  if (parts[0] === 'm') return parts[2] ? renderPage(parts[1], parts[2]) : renderModule(parts[1]);
-  renderHome();
-}
-/* Save a pristine copy of this file before anything renders into #view,
-   so the downloaded copy is identical to the original. */
-const SOURCE = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-const FILENAME = 'penn-first-year-hub.html';
-document.getElementById('download').addEventListener('click', async () => {
-  try {
-    const dl = window.claude ? await window.claude.use('downloads') : null;
-    if (dl) { await dl.save({ filename: FILENAME, data: SOURCE }); return; }
-  } catch (e) {
-    if (e && (e.code === 'declined' || e.code === 'rate_limited')) return;
-  }
-  try {
-    const url = URL.createObjectURL(new Blob([SOURCE], { type: 'text/html' }));
-    const a = document.createElement('a');
-    a.href = url; a.download = FILENAME;
-    document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 3000);
-  } catch (e) {}
+$('sections').innerHTML = SECTIONS.map(s => `
+  <section class="sect" id="${s.id}" aria-labelledby="h-${s.id}">
+    <div class="sect-head"><h2 id="h-${s.id}">${s.title.replace(/&(?!amp;)/g, '&amp;')}</h2>${s.intro ? `<p>${s.intro}</p>` : ''}</div>
+    <div class="board ${s.board || ''}">${s.cells.map(cellHtml).join('')}</div>
+  </section>`).join('');
+// cells-with-columns: keep rows from splitting across columns
+document.querySelectorAll('.cell-body[style*="columns"] .row').forEach(r => r.style.breakInside = 'avoid');
+
+$('jumpnav').innerHTML = SECTIONS.map(s => `<a href="#${s.id}" data-nav="${s.id}">${s.nav}</a>`).join('');
+$('stamp').textContent = 'Last checked ' + UPDATED + '. Confirm dates on each office’s own page before you rely on them.';
+$('footer').innerHTML = `Not an official Penn or Wharton site. Programs, funding, and deadlines change every year.<br />
+  Spot a broken link or something out of date? Email <a href="mailto:${CONTACT.email}">${CONTACT.name}</a>.`;
+
+/* ---- interactions ---- */
+document.addEventListener('change', e => {
+  const id = e.target.dataset && e.target.dataset.chk;
+  if (!id) return;
+  e.target.checked ? checked.add(id) : checked.delete(id);
+  try { localStorage.setItem(CHK_KEY, JSON.stringify([...checked])); } catch (err) {}
+  const body = e.target.closest('.cell-body');
+  body.innerHTML = renderChecklist();
+  const again = document.getElementById('chk-' + id); if (again) again.focus();
 });
 
-window.addEventListener('hashchange', route);
-route();
-</script></body></html>
+document.addEventListener('click', e => {
+  const datesBtn = e.target.closest('[data-dates]');
+  if (datesBtn) { $('dates').outerHTML = renderDates(datesBtn.dataset.dates === 'all'); return; }
+  if (e.target.closest('a')) return;
+  const more = e.target.closest('[data-d]');
+  if (more) openDetail(+more.dataset.d);
+});
+document.addEventListener('keydown', e => {
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('.row.more')) { e.preventDefault(); openDetail(+e.target.dataset.d); }
+});
+
+/* ---- detail pop-up ---- */
+const dlg = $('dlg');
+let lastHash = '';
+function openDetail(i) {
+  const x = DETAILS[i]; if (!x) return;
+  const r = x.r, d = r.d;
+  $('dlg-crumb').textContent = plain(x.sect) + ' › ' + plain(x.cell);
+  $('dlg-title').innerHTML = r.t;
+  const facts = d.f ? `<dl class="facts">${d.f.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>` : '';
+  const links = [];
+  if (r.u) links.push(['Official page', r.u]);
+  (d.l || []).forEach(l => { if (!links.some(x => x[1] === l[1])) links.push(l); });
+  const pills = (r.p || []).length ? `<p>${r.p.map(pill).join('')}</p>` : '';
+  $('dlg-body').innerHTML = pills + (r.n ? `<p style="color:#555;font-style:italic">${r.n}</p>` : '') + facts + (d.b || '') +
+    (links.length ? `<div class="dlg-links">${links.map(([l, u], j) => `<a class="dlg-link${j ? ' alt' : ''}" href="${u}"${ext(u)}>${l} ↗</a>`).join('')}</div>` : '') +
+    `<p class="dlg-foot">Details change year to year. Check the official page before you apply. <a href="#${x.slug}" id="dlg-share">Link to this card</a></p>`;
+  if (!dlg.open) { lastHash = location.hash; dlg.showModal(); }
+  history.replaceState(null, '', '#' + x.slug);
+  dlg.scrollTop = 0;
+}
+dlg.querySelector('.dlg-close').addEventListener('click', () => dlg.close());
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+dlg.addEventListener('close', () => history.replaceState(null, '', lastHash && !DETAILS.some(x => '#' + x.slug === lastHash) ? lastHash : location.pathname + location.search));
+dlg.addEventListener('click', e => {
+  if (e.target.id === 'dlg-share') { e.preventDefault(); navigator.clipboard && navigator.clipboard.writeText(location.href).then(() => { e.target.textContent = 'Link copied'; }); }
+});
+function openFromHash() {
+  const h = location.hash.slice(1); if (!h) return;
+  const i = DETAILS.findIndex(x => x.slug === h);
+  if (i >= 0) openDetail(i);
+}
+
+/* ---- search ---- */
+const INDEX = [];
+SECTIONS.forEach(s => s.cells.forEach(c => (c.rows || []).forEach(r => INDEX.push({
+  kind: 'row', r, where: plain(s.title) + ' › ' + plain(c.h),
+  text: plain([r.t, r.n, r.m, r.d && r.d.b, r.d && r.d.f && r.d.f.map(f => f.join(' ')).join(' '), (r.p || []).map(p => PILLS[p]).join(' ')].join(' ')).toLowerCase()
+}))));
+DATES.forEach(x => INDEX.push({ kind: 'row', r: { t: x.t, u: x.u, n: x.n, m: fmt(day(x.end || x.date)) }, where: 'Coming Up', text: plain(x.t + ' ' + (x.n || '')).toLowerCase() }));
+HELP.forEach(h => INDEX.push({ kind: 'row', r: { t: h.t, u: h.u, n: h.n, m: `<a class="tel" href="tel:${h.tel.replace(/\D/g, '')}">${h.tel}</a>` }, where: 'Need Help Now', text: plain(h.t + ' ' + h.n).toLowerCase() }));
+ASK.forEach(([q, a]) => INDEX.push({ kind: 'html', html: `<div class="ask"><span class="res-meta">Who Do I Ask?</span><div class="ask-q">${q}</div><div class="ask-a">${a}</div></div>`, text: plain(q + ' ' + a).toLowerCase() }));
+GLOSSARY.forEach(([t, d]) => INDEX.push({ kind: 'row', r: { t, n: d }, where: 'Penn-Speak Decoder', text: (t + ' ' + d).toLowerCase() }));
+
+const q = $('q'), qClear = $('q-clear');
+let qTimer;
+function runSearch() {
+  const term = q.value.trim().toLowerCase();
+  qClear.hidden = !term;
+  const searching = term.length >= 2;
+  $('results').hidden = !searching;
+  $('sections').hidden = searching;
+  if (!searching) return;
+  const top = $('results').getBoundingClientRect().top;
+  if (top < 0 || top > innerHeight * 0.6) scrollTo({ top: scrollY + top - 70 });
+  const words = term.split(/\s+/);
+  const hits = INDEX.filter(x => words.every(w => x.text.includes(w)));
+  const titleHit = x => x.r && words.every(w => plain(x.r.t).toLowerCase().includes(w)) ? 0 : 1;
+  hits.sort((a, b) => titleHit(a) - titleHit(b));
+  $('results-title').textContent = hits.length ? `${hits.length} result${hits.length === 1 ? '' : 's'} for “${q.value.trim()}”` : `No results for “${q.value.trim()}”`;
+  $('results-body').innerHTML = hits.length
+    ? hits.map(x => x.kind === 'html' ? x.html : rowHtml(x.r, x.where)).join('')
+    : '<p class="note" style="margin:0">Try a program name (GRIP, PURM), an office (Weingarten, CAPS), or a topic (tutoring, abroad, funding).</p>';
+}
+q.addEventListener('input', () => { clearTimeout(qTimer); qTimer = setTimeout(runSearch, 120); });
+q.addEventListener('keydown', e => { if (e.key === 'Escape') { q.value = ''; runSearch(); } });
+qClear.addEventListener('click', () => { q.value = ''; runSearch(); q.focus(); });
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && document.activeElement !== q && !/input|textarea/i.test(document.activeElement.tagName) && !dlg.open) { e.preventDefault(); q.focus(); }
+});
+$('jumpnav').addEventListener('click', () => { if (q.value) { q.value = ''; runSearch(); } });
+
+/* ---- highlight the section you're in ---- */
+const navLinks = [...document.querySelectorAll('[data-nav]')];
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    navLinks.forEach(a => a.classList.toggle('on', a.dataset.nav === en.target.id));
+    const on = navLinks.find(a => a.dataset.nav === en.target.id);
+    if (on) on.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  });
+}, { rootMargin: '-90px 0px -65% 0px' });
+document.querySelectorAll('.sect[id]:not(#results)').forEach(s => spy.observe(s));
+
+const totop = $('totop');
+addEventListener('scroll', () => totop.classList.toggle('show', scrollY > 900), { passive: true });
+totop.addEventListener('click', () => scrollTo({ top: 0 }));
+
+addEventListener('hashchange', openFromHash);
+openFromHash();
+</script>
+</body>
+</html>
